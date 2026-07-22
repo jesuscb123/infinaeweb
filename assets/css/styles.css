@@ -733,153 +733,114 @@ h3.card-title { font-weight: 700; font-size: 1.2rem; }
 }
 .calidad-section .container-custom { position: relative; z-index: 1; }
 
-/* ---------- Tarjetas apiladas (calidad) ---------- */
-.quality-stack {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  height: 320px;
-  margin: 0 auto;
+/* ---------- Tarjetas de calidad (grid editorial) ---------- */
+.quality-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
 }
 .quality-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 380px;
-  max-width: 92vw;
-  height: 280px;
   display: flex;
   flex-direction: column;
   text-align: left;
   background: var(--paper);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.9rem 1.7rem;
-  box-shadow: 0 20px 40px -24px rgba(27,35,64,.28);
-  transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .3s ease, opacity .3s ease;
-  touch-action: pan-y;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -28px rgba(27,35,64,.22);
+  transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease, border-color .3s ease;
 }
-.quality-card[data-stack-pos="0"] { transform: translate(-50%, -50%); z-index: 3; opacity: 1; cursor: grab; }
-.quality-card[data-stack-pos="1"] { transform: translate(-50%, -50%) translate(18px, -16px) scale(.96); z-index: 2; opacity: .85; cursor: default; }
-.quality-card[data-stack-pos="2"] { transform: translate(-50%, -50%) translate(32px, -30px) scale(.92); z-index: 1; opacity: .7; cursor: default; }
-.quality-card[data-stack-pos="0"]:hover {
+.quality-card:hover {
+  transform: translateY(-6px);
   box-shadow: 0 28px 56px -20px rgba(27,35,64,.4);
   border-color: var(--brand);
 }
-.quality-card[data-stack-pos="0"]:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 4px;
+.quality-card-media {
+  aspect-ratio: 1491 / 1055;
+  background: var(--mist);
+  overflow: hidden;
 }
-.quality-card.is-dragging { transition: none; cursor: grabbing; box-shadow: 0 28px 56px -20px rgba(27,35,64,.4); }
-.quality-card.is-open { opacity: 0; pointer-events: none; }
+.quality-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1);
+  transition: filter .6s ease, transform .6s ease;
+}
+.quality-card:hover .quality-card-media img {
+  filter: grayscale(0);
+  transform: scale(1.045);
+}
+.quality-card-body {
+  padding: 1.6rem 1.7rem 1.9rem;
+}
+.quality-card-title { margin-bottom: 0; }
+.quality-card-title span {
+  background-image: linear-gradient(var(--brand), var(--brand));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .5s ease;
+  padding-bottom: 2px;
+}
+.quality-card:hover .quality-card-title span { background-size: 100% 2px; }
+
+/* Contenido que se despliega al pasar el ratón (icono, etiqueta y texto) */
+.quality-card-extra {
+  overflow: hidden;
+  margin-top: .9rem;
+  transition: max-height .5s cubic-bezier(.22,1,.36,1), opacity .4s ease, margin-top .45s ease;
+}
 .quality-card-icon {
-  width: 44px; height: 44px;
-  display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px;
+  display: inline-flex; align-items: center; justify-content: center;
   border-radius: var(--radius-sm);
   background: var(--mist);
   color: var(--brand);
-  margin-bottom: 1rem;
   flex-shrink: 0;
-  pointer-events: none;
+  transition: color .2s ease, background-color .2s ease, transform .3s cubic-bezier(.22,1,.36,1);
 }
-.quality-card-icon svg { width: 22px; height: 22px; }
-.quality-card-title { margin-bottom: .6rem; pointer-events: none; }
-.quality-card-text {
-  color: var(--text-2);
-  font-size: .92rem;
-  margin: 0;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  pointer-events: none;
+.quality-card-icon svg { width: 16px; height: 16px; }
+.quality-card:hover .quality-card-icon { background: var(--brand); color: #fff; transform: rotate(-8deg) scale(1.08); }
+.quality-card-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .9rem; }
+.quality-card-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: .3rem .75rem;
+  border-radius: 99px;
+  background: rgba(45,64,133,.1);
+  color: var(--brand);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
-.quality-card-cue {
-  display: block;
-  margin-top: auto;
-  padding-top: .8rem;
-  font-size: .76rem;
+.quality-card-num {
+  font-size: .78rem;
   font-weight: 600;
   color: var(--text-2);
-  opacity: .7;
-  pointer-events: none;
+  letter-spacing: .03em;
+  font-variant-numeric: tabular-nums;
 }
-.quality-card-cue::before { content: '↗ '; }
+.quality-card-text { color: var(--text-2); font-size: .92rem; margin: 0; line-height: 1.7; }
 
-/* ---------- Dots + pista de la pila ---------- */
-.quality-dots { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: var(--space-3); }
-.quality-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  border: none;
-  background: var(--border);
-  cursor: pointer;
-  padding: 0;
-  transition: background-color .25s ease, transform .25s ease;
+/* En pantallas con hover real (ratón), la info se oculta y se despliega sobre la marcha */
+@media (hover: hover) and (pointer: fine) {
+  .quality-card-extra {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+  }
+  .quality-card:hover .quality-card-extra {
+    max-height: 220px;
+    opacity: 1;
+    margin-top: .9rem;
+  }
 }
-.quality-dot.is-active { background: var(--brand); transform: scale(1.3); }
-.quality-stack-hint {
-  text-align: center;
-  margin: .6rem 0 0;
-  font-size: .8rem;
-  color: var(--text-2);
-  opacity: .75;
-}
-
-/* ---------- Popup de tarjeta de calidad ---------- */
-.quality-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 2100;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-.quality-modal.is-open { display: flex; }
-.quality-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(15,20,36,.55);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  opacity: 0;
-  transition: opacity .35s ease;
-}
-.quality-modal.is-visible .quality-modal-backdrop { opacity: 1; }
-.quality-modal-panel {
-  position: relative;
-  width: min(480px, 92vw);
-  text-align: left;
-  background: var(--paper);
-  border-radius: var(--radius);
-  padding: 2.4rem 2.2rem;
-  box-shadow: 0 40px 80px -20px rgba(27,35,64,.45);
-  transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .3s ease;
-}
-.quality-modal-close {
-  position: absolute;
-  top: 1rem; right: 1rem;
-  width: 36px; height: 36px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--mist);
-  color: var(--ink);
-  cursor: pointer;
-}
-.quality-modal-close svg { width: 16px; height: 16px; }
-.quality-modal-icon {
-  width: 52px; height: 52px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: var(--radius-sm);
-  background: var(--brand);
-  color: #fff;
-  margin-bottom: 1.2rem;
-}
-.quality-modal-icon svg { width: 26px; height: 26px; }
-.quality-modal-title { font-size: 1.3rem; margin-bottom: .8rem; }
-.quality-modal-text { color: var(--text-2); margin: 0; line-height: 1.7; }
 
 /* ---------- Tarjetas de pilar ---------- */
 .pillar-card {
@@ -1398,6 +1359,7 @@ h3.card-title { font-weight: 700; font-size: 1.2rem; }
   .story-act-media { max-width: 380px; margin-inline: auto; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .quality-grid { grid-template-columns: 1fr; gap: 1.4rem; }
 }
 @media (max-width: 899px) {
   .nav-links {
@@ -1417,8 +1379,6 @@ h3.card-title { font-weight: 700; font-size: 1.2rem; }
   .nav-toggle { display: block; }
 }
 @media (max-width: 767px) {
-  .quality-stack { height: 280px; }
-  .quality-card { height: 250px; }
   .story-act-numeral { font-size: clamp(6rem, 32vw, 9rem); }
   .story-act--alt { clip-path: polygon(0 34px, 100% 0, 100% 100%, 0 100%); margin-top: -24px; }
   .story-moments { padding-left: 2rem; }

@@ -265,58 +265,64 @@ $canonical = "https://infinaeconsulting.com/";
         <h2 class="section-title">Cómo garantizamos la calidad en cada llamada</h2>
         <span class="stat-badge reveal-scale"><span class="stat-num" data-count-to="3">0</span>pilares de calidad</span>
       </div>
-      <div class="mini-badge-row reveal" style="margin-bottom:1.6rem;">
-        <span class="mini-badge">Evaluación</span>
-        <span class="mini-badge">Supervisión</span>
-        <span class="mini-badge">Formación continua</span>
-      </div>
-      <div class="quality-stack reveal-scale" data-quality-stack>
-        <div class="quality-card" data-quality-card tabindex="0" role="button" aria-haspopup="dialog">
-          <div class="quality-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg>
+      <div class="quality-grid">
+        <article class="quality-card reveal-scale stagger-1">
+          <div class="quality-card-media">
+            <img src="assets/img/fondo-analisis.webp" alt="Panel con métricas de llamadas, tiempos de respuesta y objetivos, analizado con una lupa" loading="lazy" width="1492" height="1054">
           </div>
-          <h3 class="quality-card-title">Evaluación</h3>
-          <p class="quality-card-text">Análisis constante de los resultados obtenidos en las llamadas, los tiempos de respuesta y el cumplimiento de los objetivos establecidos, para identificar áreas de mejora y ajustar la estrategia a tiempo.</p>
-          <span class="quality-card-cue" aria-hidden="true">Pulsa para ver más</span>
-        </div>
-        <div class="quality-card" data-quality-card tabindex="0" role="button" aria-haspopup="dialog">
-          <div class="quality-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <div class="quality-card-body">
+            <h3 class="quality-card-title"><span>Evaluación</span></h3>
+            <div class="quality-card-extra">
+              <div class="quality-card-meta">
+                <span class="quality-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg>
+                </span>
+                <span class="quality-card-tag">Pilar</span>
+                <span class="quality-card-num">01 · 03</span>
+              </div>
+              <p class="quality-card-text">Análisis constante de los resultados obtenidos en las llamadas, los tiempos de respuesta y el cumplimiento de los objetivos establecidos, para identificar áreas de mejora y ajustar la estrategia a tiempo.</p>
+            </div>
           </div>
-          <h3 class="quality-card-title">Supervisión</h3>
-          <p class="quality-card-text">Nuestros coordinadores siguen la operativa en tiempo real, ofrecen retroalimentación continua al personal, resuelven incidencias de forma ágil y velan por el mantenimiento de los estándares de calidad.</p>
-          <span class="quality-card-cue" aria-hidden="true">Pulsa para ver más</span>
-        </div>
-        <div class="quality-card" data-quality-card tabindex="0" role="button" aria-haspopup="dialog">
-          <div class="quality-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+        </article>
+        <article class="quality-card reveal-scale stagger-3">
+          <div class="quality-card-media">
+            <img src="assets/img/fondo-supervision.webp" alt="Agente con auriculares supervisando en tiempo real varios paneles con el rendimiento de las llamadas" loading="lazy" width="1491" height="1055">
           </div>
-          <h3 class="quality-card-title">Formación continua</h3>
-          <p class="quality-card-text">Plan de desarrollo profesional con actualizaciones periódicas en herramientas, técnicas de comunicación efectiva y tendencias del sector, para una atención moderna y en constante evolución.</p>
-          <span class="quality-card-cue" aria-hidden="true">Pulsa para ver más</span>
-        </div>
+          <div class="quality-card-body">
+            <h3 class="quality-card-title"><span>Supervisión</span></h3>
+            <div class="quality-card-extra">
+              <div class="quality-card-meta">
+                <span class="quality-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </span>
+                <span class="quality-card-tag">Pilar</span>
+                <span class="quality-card-num">02 · 03</span>
+              </div>
+              <p class="quality-card-text">Nuestros coordinadores siguen la operativa en tiempo real, ofrecen retroalimentación continua al personal, resuelven incidencias de forma ágil y velan por el mantenimiento de los estándares de calidad.</p>
+            </div>
+          </div>
+        </article>
+        <article class="quality-card reveal-scale stagger-5">
+          <div class="quality-card-media">
+            <img src="assets/img/fondo-formacion-continua.webp" alt="Formadora impartiendo una sesión de formación continua a un equipo de atención al cliente" loading="lazy" width="1491" height="1055">
+          </div>
+          <div class="quality-card-body">
+            <h3 class="quality-card-title"><span>Formación continua</span></h3>
+            <div class="quality-card-extra">
+              <div class="quality-card-meta">
+                <span class="quality-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+                </span>
+                <span class="quality-card-tag">Pilar</span>
+                <span class="quality-card-num">03 · 03</span>
+              </div>
+              <p class="quality-card-text">Plan de desarrollo profesional con actualizaciones periódicas en herramientas, técnicas de comunicación efectiva y tendencias del sector, para una atención moderna y en constante evolución.</p>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="quality-dots" data-quality-dots>
-        <button class="quality-dot is-active" type="button" data-quality-dot="0" aria-label="Ir a Evaluación"></button>
-        <button class="quality-dot" type="button" data-quality-dot="1" aria-label="Ir a Supervisión"></button>
-        <button class="quality-dot" type="button" data-quality-dot="2" aria-label="Ir a Formación continua"></button>
-      </div>
-      <p class="quality-stack-hint">Desliza la tarjeta para pasar a la siguiente · pulsa para ver los detalles</p>
     </div>
   </section>
-
-  <!-- Popup de tarjeta de calidad -->
-  <div class="quality-modal" id="qualityModal" aria-hidden="true">
-    <div class="quality-modal-backdrop" data-quality-close></div>
-    <div class="quality-modal-panel" role="dialog" aria-modal="true" aria-labelledby="qualityModalTitle" tabindex="-1">
-      <button class="quality-modal-close" type="button" data-quality-close aria-label="Cerrar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-      <div class="quality-modal-icon" id="qualityModalIcon" aria-hidden="true"></div>
-      <h3 class="quality-modal-title" id="qualityModalTitle"></h3>
-      <p class="quality-modal-text" id="qualityModalText"></p>
-    </div>
-  </div>
 
   <!-- INSTALACIONES Y EQUIPAMIENTO -->
   <section class="section section-mist instalaciones-section" id="instalaciones">
