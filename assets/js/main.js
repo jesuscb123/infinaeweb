@@ -115,6 +115,80 @@
     window.addEventListener("resize", updateStoryScroll);
   }
 
+  /* ---------- Slider: Qué hacemos / Cómo trabajamos ---------- */
+  var storySlider = document.querySelector("[data-story-slider]");
+  if (storySlider) {
+    var storySlides = Array.prototype.slice.call(storySlider.querySelectorAll(".story-slide"));
+    var storyTabs = Array.prototype.slice.call(document.querySelectorAll("[data-story-tab]"));
+    var storyCurrent = storySlides.findIndex(function (s) { return s.classList.contains("is-active"); });
+    if (storyCurrent < 0) storyCurrent = 0;
+    var storyAnimating = false;
+    var storyRevealSelector = ".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur";
+
+    var resetReveal = function (slide) {
+      slide.querySelectorAll(storyRevealSelector).forEach(function (el) { el.classList.remove("is-visible"); });
+    };
+    var playReveal = function (slide) {
+      slide.querySelectorAll(storyRevealSelector).forEach(function (el) { el.classList.add("is-visible"); });
+    };
+    var setActiveTab = function (index) {
+      storyTabs.forEach(function (tab) {
+        var isActive = parseInt(tab.getAttribute("data-story-tab"), 10) === index;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+    };
+
+    var goToStorySlide = function (nextIndex, dir) {
+      if (storyAnimating || nextIndex === storyCurrent || !storySlides[nextIndex]) return;
+      storyAnimating = true;
+      setActiveTab(nextIndex);
+      var outgoing = storySlides[storyCurrent];
+      var incoming = storySlides[nextIndex];
+
+      incoming.classList.add("is-instant", "is-active");
+      incoming.style.transform = "translateX(" + dir * 100 + "%)";
+      resetReveal(incoming); // para que sus elementos vuelvan a aparecer
+      void incoming.offsetWidth; // fuerza reflow antes de animar
+      incoming.classList.remove("is-instant");
+
+      requestAnimationFrame(function () {
+        outgoing.style.transform = "translateX(" + -dir * 100 + "%)";
+        incoming.style.transform = "translateX(0)";
+      });
+      // pequeño respiro real para que el navegador pinte el reseteo antes de reactivarlo
+      window.setTimeout(function () { playReveal(incoming); }, 40);
+
+      var finished = false;
+      var finish = function () {
+        if (finished) return;
+        finished = true;
+        incoming.removeEventListener("transitionend", onTransitionEnd);
+        outgoing.classList.add("is-instant");
+        outgoing.classList.remove("is-active");
+        outgoing.style.transform = "";
+        incoming.style.transform = "";
+        resetReveal(outgoing); // listo para volver a aparecer la próxima vez
+        void outgoing.offsetWidth; // fuerza reflow para que el reseteo no se anime
+        outgoing.classList.remove("is-instant");
+        storyCurrent = nextIndex;
+        storyAnimating = false;
+      };
+      var onTransitionEnd = function (e) {
+        if (e.target === incoming && e.propertyName === "transform") finish();
+      };
+      incoming.addEventListener("transitionend", onTransitionEnd);
+      window.setTimeout(finish, 800); // red de seguridad si transitionend no llega
+    };
+
+    storyTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var target = parseInt(tab.getAttribute("data-story-tab"), 10);
+        goToStorySlide(target, target > storyCurrent ? 1 : -1);
+      });
+    });
+  }
+
   /* ---------- Tilt 3D delegado (galería, equipamiento, tarjetas de contacto) ---------- */
   var TILT_MAX_DEG = 6;
   document.querySelectorAll("[data-tilt-group]").forEach(function (container) {
@@ -275,6 +349,20 @@
           item.classList.toggle("is-active", item.getAttribute("data-category") === category);
         });
       });
+    });
+  }
+
+  /* ---------- Tarjetas expandibles (equipamiento) ---------- */
+  var expandCardsList = document.querySelector("[data-expand-cards]");
+  if (expandCardsList) {
+    var expandCards = Array.prototype.slice.call(expandCardsList.querySelectorAll("[data-expand-card]"));
+    var setActiveExpandCard = function (card) {
+      expandCards.forEach(function (c) { c.classList.toggle("is-active", c === card); });
+    };
+    expandCards.forEach(function (card) {
+      card.addEventListener("mouseenter", function () { setActiveExpandCard(card); });
+      card.addEventListener("focus", function () { setActiveExpandCard(card); });
+      card.addEventListener("click", function () { setActiveExpandCard(card); });
     });
   }
 

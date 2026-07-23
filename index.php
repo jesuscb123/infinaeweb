@@ -143,7 +143,9 @@ $canonical = "https://infinaeconsulting.com/";
         </div>
         <div class="col-lg-5 order-lg-1 reveal-left">
           <div class="about-media" data-tilt-group>
-            <img class="reveal-blur" data-tilt src="assets/img/quienes-somos.webp" alt="Equipo de Infinae trabajando con auriculares en la sala de operaciones del call center" loading="lazy" width="1254" height="1254">
+            <div class="about-media-tilt" data-tilt>
+              <img class="reveal-blur" src="assets/img/quienes-somos.webp" alt="Equipo de Infinae trabajando con auriculares en la sala de operaciones del call center" loading="lazy" width="1254" height="1254">
+            </div>
             <span class="about-media-chip" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 5 18.5V20"/><circle cx="9.5" cy="8" r="3.2"/><path d="M16.5 8.3a3 3 0 1 1 1.9 5.4"/><path d="M19 20v-1.5a3 3 0 0 0-1.7-2.7"/></svg>
             </span>
@@ -163,10 +165,17 @@ $canonical = "https://infinaeconsulting.com/";
       <div class="container-custom">
         <span class="eyebrow">Metodología</span>
         <h2 class="visually-hidden">Qué hacemos y cómo trabajamos</h2>
+        <div class="story-tabs" role="tablist" aria-label="Cambiar entre qué hacemos y cómo trabajamos">
+          <button type="button" class="story-tab is-active" data-story-tab="0" role="tab" aria-selected="true">¿Qué hacemos?</button>
+          <button type="button" class="story-tab" data-story-tab="1" role="tab" aria-selected="false">¿Cómo trabajamos?</button>
+        </div>
       </div>
     </div>
 
-    <article class="story-act" data-story-act>
+    <div class="story-slider" data-story-slider>
+      <div class="story-track" data-story-track>
+
+    <article class="story-act story-slide is-active" data-story-act data-story-slide="0">
       <span class="story-act-numeral story-act-numeral--left" aria-hidden="true">01</span>
       <div class="container-custom">
         <div class="story-act-grid">
@@ -184,17 +193,17 @@ $canonical = "https://infinaeconsulting.com/";
                 </defs>
                 <path data-story-line stroke="url(#story-line-gradient-1)" pathLength="1" d="M6 8 C 58 55, 4 110, 40 165 S 10 275, 46 312" />
               </svg>
-              <div class="story-moment reveal-blur" data-story-moment>
+              <div class="story-moment reveal-blur stagger-1" data-story-moment>
                 <span class="story-moment-num">01</span>
                 <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-                <p class="story-moment-text">Identificar oportunidades de colaboración</p>
+                <p class="story-moment-text"> Gestionamos llamadas salientes dirigidas a empresas, con el objetivo de identificar oportunidades de colaboración</p>
               </div>
-              <div class="story-moment reveal-blur" data-story-moment>
+              <div class="story-moment reveal-blur stagger-2" data-story-moment>
                 <span class="story-moment-num">02</span>
                 <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg></span>
                 <p class="story-moment-text">Recabar información sobre necesidades laborales</p>
               </div>
-              <div class="story-moment reveal-blur" data-story-moment>
+              <div class="story-moment reveal-blur stagger-3" data-story-moment>
                 <span class="story-moment-num">03</span>
                 <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
                 <p class="story-moment-text">Enriquecer nuestra base de datos para programas de empleo y desarrollo comercial</p>
@@ -204,20 +213,20 @@ $canonical = "https://infinaeconsulting.com/";
 
           <div class="story-act-media reveal-right">
             <div class="story-act-photo">
-              <img src="assets/img/zonas-trabajo/9.jpg" alt="Equipo de Infinae gestionando llamadas salientes en la sala de operaciones" loading="lazy" width="768" height="1024">
+              <img src="assets/img/que-hacemos-tarjeta.webp" alt="Agente de Infinae con auriculares gestionando una llamada saliente en la sala de operaciones" loading="lazy" width="1536" height="1024">
             </div>
           </div>
         </div>
       </div>
     </article>
 
-    <article class="story-act story-act--alt" data-story-act>
+    <article class="story-act story-act--alt story-slide" data-story-act data-story-slide="1">
       <span class="story-act-numeral story-act-numeral--right" aria-hidden="true">02</span>
       <div class="container-custom">
         <div class="story-act-grid">
           <div class="story-act-media reveal-left">
             <div class="story-act-photo">
-              <img src="assets/img/equipos-informaticos/10.jpg" alt="Puesto de trabajo individual con equipo informático, reflejo de la atención personalizada de Infinae" loading="lazy" width="615" height="820">
+              <img src="assets/img/como-trabajamos-tarjeta.webp" alt="Agente de Infinae siguiendo el guion de llamada en pantalla junto al resto del equipo" loading="lazy" width="1536" height="1024">
             </div>
           </div>
 
@@ -235,17 +244,17 @@ $canonical = "https://infinaeconsulting.com/";
                 </defs>
                 <path data-story-line stroke="url(#story-line-gradient-2)" pathLength="1" d="M6 8 C 58 55, 4 110, 40 165 S 10 275, 46 312" />
               </svg>
-              <div class="story-moment reveal-blur" data-story-moment>
+              <div class="story-moment reveal-blur stagger-1" data-story-moment>
                 <span class="story-moment-num">04</span>
                 <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></span>
                 <p class="story-moment-text">Personalización en el trato</p>
               </div>
-              <div class="story-moment reveal-blur" data-story-moment>
+              <div class="story-moment reveal-blur stagger-2" data-story-moment>
                 <span class="story-moment-num">05</span>
                 <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></span>
                 <p class="story-moment-text">Uso adecuado de herramientas digitales</p>
               </div>
-              <div class="story-moment reveal-blur" data-story-moment>
+              <div class="story-moment reveal-blur stagger-3" data-story-moment>
                 <span class="story-moment-num">06</span>
                 <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
                 <p class="story-moment-text">Seguimiento sistemático de cada interacción</p>
@@ -255,6 +264,9 @@ $canonical = "https://infinaeconsulting.com/";
         </div>
       </div>
     </article>
+
+      </div>
+    </div>
   </section>
 
   <!-- COMPROMISO CON LA CALIDAD -->
@@ -277,8 +289,7 @@ $canonical = "https://infinaeconsulting.com/";
                 <span class="quality-card-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg>
                 </span>
-                <span class="quality-card-tag">Pilar</span>
-                <span class="quality-card-num">01 · 03</span>
+                <span class="quality-card-tag">Evaluación</span>
               </div>
               <p class="quality-card-text">Análisis constante de los resultados obtenidos en las llamadas, los tiempos de respuesta y el cumplimiento de los objetivos establecidos, para identificar áreas de mejora y ajustar la estrategia a tiempo.</p>
             </div>
@@ -295,8 +306,7 @@ $canonical = "https://infinaeconsulting.com/";
                 <span class="quality-card-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
                 </span>
-                <span class="quality-card-tag">Pilar</span>
-                <span class="quality-card-num">02 · 03</span>
+                <span class="quality-card-tag">Supervisión</span>
               </div>
               <p class="quality-card-text">Nuestros coordinadores siguen la operativa en tiempo real, ofrecen retroalimentación continua al personal, resuelven incidencias de forma ágil y velan por el mantenimiento de los estándares de calidad.</p>
             </div>
@@ -313,8 +323,7 @@ $canonical = "https://infinaeconsulting.com/";
                 <span class="quality-card-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
                 </span>
-                <span class="quality-card-tag">Pilar</span>
-                <span class="quality-card-num">03 · 03</span>
+                <span class="quality-card-tag">Formación continua</span>
               </div>
               <p class="quality-card-text">Plan de desarrollo profesional con actualizaciones periódicas en herramientas, técnicas de comunicación efectiva y tendencias del sector, para una atención moderna y en constante evolución.</p>
             </div>
@@ -341,68 +350,125 @@ $canonical = "https://infinaeconsulting.com/";
 
       <div class="installation-track" id="galleryGrid" data-tilt-group data-installation-track>
         <div class="gallery-item installation-item is-active" data-tilt data-category="zona-trabajo" data-caption="Fila de puestos de trabajo equipados">
-          <img src="assets/img/zonas-trabajo/8.jpg" alt="Fila de puestos de trabajo con monitores en la sala principal" loading="lazy" width="615" height="461">
+          <img src="assets/img/zonas-trabajo/8.webp" alt="Fila de puestos de trabajo con monitores en la sala principal" loading="lazy" width="615" height="461">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Fila de puestos de trabajo</span>
         </div>
         <div class="gallery-item installation-item is-active" data-tilt data-category="zona-trabajo" data-caption="Zona de trabajo con equipos y auriculares">
-          <img src="assets/img/zonas-trabajo/9.jpg" alt="Zona de trabajo con monitores y auriculares, con roll-ups de Infinae y Almina Eventos" loading="lazy" width="768" height="1024">
+          <img src="assets/img/zonas-trabajo/9.webp" alt="Zona de trabajo con monitores y auriculares, con roll-ups de Infinae y Almina Eventos" loading="lazy" width="768" height="1024">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Zona de trabajo con auriculares</span>
         </div>
         <div class="gallery-item installation-item is-active" data-tilt data-category="zona-trabajo" data-caption="Puesto de trabajo con monitor y auriculares">
-          <img src="assets/img/zonas-trabajo/11.jpg" alt="Puesto de trabajo individual con monitor Dell y auriculares" loading="lazy" width="615" height="820">
+          <img src="assets/img/zonas-trabajo/11.webp" alt="Puesto de trabajo individual con monitor Dell y auriculares" loading="lazy" width="615" height="820">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Puesto de trabajo individual</span>
         </div>
         <div class="gallery-item installation-item is-active" data-tilt data-category="zona-trabajo" data-caption="Sala de trabajo con varias filas de puestos">
-          <img src="assets/img/zonas-trabajo/21.jpg" alt="Sala de trabajo amplia con varias filas de puestos y señalización de salida" loading="lazy" width="1024" height="768">
+          <img src="assets/img/zonas-trabajo/21.webp" alt="Sala de trabajo amplia con varias filas de puestos y señalización de salida" loading="lazy" width="1024" height="768">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Sala de trabajo</span>
         </div>
 
         <div class="gallery-item installation-item" data-tilt data-category="equipos" data-caption="Puestos informáticos en la sala de operaciones">
-          <img src="assets/img/equipos-informaticos/5.jpg" alt="Puestos informáticos en la sala de operaciones, con monitores y CPU de sobremesa" loading="lazy" width="615" height="461">
+          <img src="assets/img/equipos-informaticos/5.webp" alt="Puestos informáticos en la sala de operaciones, con monitores y CPU de sobremesa" loading="lazy" width="615" height="461">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Puestos informáticos</span>
         </div>
         <div class="gallery-item installation-item" data-tilt data-category="equipos" data-caption="Equipos informáticos con auriculares">
-          <img src="assets/img/equipos-informaticos/6.jpg" alt="Equipos informáticos de sobremesa con monitores y auriculares en fila" loading="lazy" width="615" height="820">
+          <img src="assets/img/equipos-informaticos/6.webp" alt="Equipos informáticos de sobremesa con monitores y auriculares en fila" loading="lazy" width="615" height="820">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Equipos con auriculares</span>
         </div>
         <div class="gallery-item installation-item" data-tilt data-category="equipos" data-caption="Equipo informático individual">
-          <img src="assets/img/equipos-informaticos/10.jpg" alt="Equipo informático individual con monitor Samsung, teclado y ratón" loading="lazy" width="615" height="820">
+          <img src="assets/img/equipos-informaticos/10.webp" alt="Equipo informático individual con monitor Samsung, teclado y ratón" loading="lazy" width="615" height="820">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Equipo informático individual</span>
         </div>
 
         <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Aseo con lavabo y estantería">
-          <img src="assets/img/baños/16.jpg" alt="Aseo con lavabo y estantería de almacenaje" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/16.webp" alt="Aseo con lavabo y estantería de almacenaje" loading="lazy" width="615" height="820">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Aseo con lavabo y estantería</span>
         </div>
         <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Aseo con urinarios y lavabos">
-          <img src="assets/img/baños/17.jpg" alt="Aseo con urinarios y lavabos en fila" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/17.webp" alt="Aseo con urinarios y lavabos en fila" loading="lazy" width="615" height="820">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Aseo con urinarios y lavabos</span>
         </div>
         <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Aseo individual con inodoro y lavabo">
-          <img src="assets/img/baños/18.jpg" alt="Aseo individual con inodoro, mampara y lavabo" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/18.webp" alt="Aseo individual con inodoro, mampara y lavabo" loading="lazy" width="615" height="820">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Aseo individual</span>
         </div>
         <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Aseo con inodoro y estantería">
-          <img src="assets/img/baños/19.jpg" alt="Aseo con inodoro y estantería de almacenaje" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/19.webp" alt="Aseo con inodoro y estantería de almacenaje" loading="lazy" width="615" height="820">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Aseo con estantería</span>
         </div>
         <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Lavabo del aseo">
-          <img src="assets/img/baños/20.jpg" alt="Lavabo suspendido en la pared del aseo" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/20.webp" alt="Lavabo suspendido en la pared del aseo" loading="lazy" width="615" height="820">
           <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
           <span class="gallery-caption">Lavabo del aseo</span>
         </div>
       </div>
+
+      <div class="equipment-intro reveal">
+        <div class="eyebrow">Equipamiento</div>
+        <h3 class="equipment-title">Con qué trabajamos cada día</h3>
+        <p class="lede">Contamos con los recursos tecnológicos necesarios para garantizar un trabajo ágil, preciso y eficiente, con un seguimiento organizado y personalizado de cada interacción.</p>
+      </div>
+
+      <ul class="expand-cards reveal-scale" data-expand-cards>
+        <li class="expand-card is-active" data-expand-card tabindex="0">
+          <img class="expand-card-img" src="assets/img/placeholder-equipamiento-ordenadores.webp" alt="Ordenadores de sobremesa equipados con CRM y software de gestión de llamadas" loading="lazy" width="1200" height="900">
+          <span class="expand-card-scrim" aria-hidden="true"></span>
+          <div class="expand-card-body">
+            <span class="expand-card-label">Ordenadores</span>
+            <div class="expand-card-content">
+              <span class="expand-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></span>
+              <h4 class="expand-card-title">Ordenadores de sobremesa</h4>
+              <p class="expand-card-text">Equipos con acceso a CRM y software especializado en gestión de llamadas, para un seguimiento organizado de cada interacción.</p>
+            </div>
+          </div>
+        </li>
+        <li class="expand-card" data-expand-card tabindex="0">
+          <img class="expand-card-img" src="assets/img/placeholder-equipamiento-software.webp" alt="Software de gestión y herramientas ofimáticas para el análisis de datos" loading="lazy" width="1200" height="900">
+          <span class="expand-card-scrim" aria-hidden="true"></span>
+          <div class="expand-card-body">
+            <span class="expand-card-label">Software de gestión</span>
+            <div class="expand-card-content">
+              <span class="expand-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span>
+              <h4 class="expand-card-title">Software de gestión (CRM)</h4>
+              <p class="expand-card-text">Herramientas ofimáticas y sistemas de gestión de datos que facilitan el trabajo administrativo y el análisis en tiempo real.</p>
+            </div>
+          </div>
+        </li>
+        <li class="expand-card" data-expand-card tabindex="0">
+          <img class="expand-card-img" src="assets/img/placeholder-equipamiento-auriculares.webp" alt="Auriculares con cancelación de ruido para una comunicación clara" loading="lazy" width="1200" height="900">
+          <span class="expand-card-scrim" aria-hidden="true"></span>
+          <div class="expand-card-body">
+            <span class="expand-card-label">Auriculares</span>
+            <div class="expand-card-content">
+              <span class="expand-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1Z"/><path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 1 1Z"/></svg></span>
+              <h4 class="expand-card-title">Auriculares con cancelación de ruido</h4>
+              <p class="expand-card-text">Fundamentales para asegurar una comunicación clara y sin interferencias, incluso en entornos de alta actividad.</p>
+            </div>
+          </div>
+        </li>
+        <li class="expand-card" data-expand-card tabindex="0">
+          <img class="expand-card-img" src="assets/img/placeholder-equipamiento-fibra.webp" alt="Conexión a internet por fibra óptica de alta velocidad" loading="lazy" width="1200" height="900">
+          <span class="expand-card-scrim" aria-hidden="true"></span>
+          <div class="expand-card-body">
+            <span class="expand-card-label">Fibra óptica</span>
+            <div class="expand-card-content">
+              <span class="expand-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8 15.8a6 6 0 0 1 8 0M11.5 19a2 2 0 0 1 1 0"/><circle cx="12" cy="19.3" r=".6" fill="currentColor" stroke="none"/></svg></span>
+              <h4 class="expand-card-title">Fibra óptica de alta velocidad</h4>
+              <p class="expand-card-text">Garantiza estabilidad en la operativa diaria y una respuesta inmediata a las demandas del servicio.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
