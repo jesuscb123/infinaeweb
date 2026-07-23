@@ -85,10 +85,9 @@
     }
   }
 
-  /* ---------- Storytelling de metodología: paralaje del numeral + trazo de la línea ---------- */
+  /* ---------- Storytelling de metodología: trazo de la línea ---------- */
   var storyActs = Array.prototype.slice.call(document.querySelectorAll("[data-story-act]"));
   if (storyActs.length) {
-    var prefersReducedMotionStory = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var storyTicking = false;
     var updateStoryScroll = function () {
       storyActs.forEach(function (act) {
@@ -96,11 +95,6 @@
         var vh = window.innerHeight;
         var total = rect.height + vh * 0.6;
         var progress = Math.min(Math.max((vh * 0.85 - rect.top) / total, 0), 1);
-
-        if (!prefersReducedMotionStory) {
-          var numeral = act.querySelector(".story-act-numeral");
-          if (numeral) numeral.style.transform = "translateY(" + ((progress - 0.5) * -46).toFixed(1) + "px)";
-        }
 
         var line = act.querySelector(".story-moments-line");
         if (line) line.style.setProperty("--story-line-progress", (1 - progress).toFixed(3));
@@ -143,6 +137,7 @@
       if (storyAnimating || nextIndex === storyCurrent || !storySlides[nextIndex]) return;
       storyAnimating = true;
       setActiveTab(nextIndex);
+      storySlider.setAttribute("data-active-slide", String(nextIndex));
       var outgoing = storySlides[storyCurrent];
       var incoming = storySlides[nextIndex];
 
@@ -226,35 +221,6 @@
       label.style.setProperty("--my", "0px");
     });
   });
-
-  /* ---------- Línea de progreso del timeline (scroll-scrubbed) ---------- */
-  var timelineEl = document.querySelector(".process-timeline");
-  var timelineStepCount = timelineEl ? timelineEl.querySelectorAll(".process-step").length : 0;
-  if (timelineEl && timelineStepCount) {
-    var timelineTicking = false;
-    var updateTimelineProgress = function () {
-      var rect = timelineEl.getBoundingClientRect();
-      var vh = window.innerHeight;
-      var total = rect.height + vh * 0.55;
-      var progressed = vh * 0.85 - rect.top;
-      var progress = Math.min(Math.max(progressed / total, 0), 1);
-      for (var i = 1; i <= timelineStepCount; i++) {
-        var segProgress = Math.min(Math.max(progress * timelineStepCount - (i - 1), 0), 1);
-        timelineEl.style.setProperty("--progress-" + i, segProgress.toFixed(3));
-      }
-    };
-    var onTimelineScroll = function () {
-      if (timelineTicking) return;
-      timelineTicking = true;
-      requestAnimationFrame(function () {
-        updateTimelineProgress();
-        timelineTicking = false;
-      });
-    };
-    updateTimelineProgress();
-    window.addEventListener("scroll", onTimelineScroll, { passive: true });
-    window.addEventListener("resize", onTimelineScroll);
-  }
 
   /* ---------- Botón volver arriba ---------- */
   if (backToTop) {
@@ -364,6 +330,55 @@
       card.addEventListener("focus", function () { setActiveExpandCard(card); });
       card.addEventListener("click", function () { setActiveExpandCard(card); });
     });
+  }
+
+  /* ---------- Pasos con imagen (atención al cliente) ---------- */
+  var featureSteps = document.querySelector("[data-feature-steps]");
+  if (featureSteps) {
+    var featureItems = Array.prototype.slice.call(featureSteps.querySelectorAll("[data-feature-item]"));
+    var featureImages = Array.prototype.slice.call(featureSteps.querySelectorAll("[data-feature-image]"));
+    var featureCurrent = 0;
+    var featureTimer = null;
+    var featureAutoplayMs = 4000;
+
+    var goToFeature = function (index) {
+      if (index === featureCurrent) return;
+      var prevImg = featureImages[featureCurrent];
+      var nextImg = featureImages[index];
+
+      featureItems.forEach(function (item, i) {
+        item.classList.toggle("is-active", i === index);
+        item.classList.toggle("is-done", i <= index);
+      });
+
+      if (prevImg && prevImg !== nextImg) {
+        prevImg.classList.remove("is-active");
+        prevImg.classList.add("is-leaving");
+        window.setTimeout(function () { prevImg.classList.remove("is-leaving"); }, 550);
+      }
+      nextImg.classList.add("is-active");
+      featureCurrent = index;
+    };
+
+    var nextFeature = function () {
+      goToFeature((featureCurrent + 1) % featureItems.length);
+    };
+
+    var startFeatureAutoplay = function () {
+      window.clearInterval(featureTimer);
+      featureTimer = window.setInterval(nextFeature, featureAutoplayMs);
+    };
+
+    featureItems.forEach(function (item, i) {
+      item.addEventListener("click", function () {
+        goToFeature(i);
+        startFeatureAutoplay();
+      });
+    });
+    featureSteps.addEventListener("mouseenter", function () { window.clearInterval(featureTimer); });
+    featureSteps.addEventListener("mouseleave", startFeatureAutoplay);
+
+    startFeatureAutoplay();
   }
 
   /* ---------- Formulario de contacto ---------- */

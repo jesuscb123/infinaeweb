@@ -161,22 +161,21 @@ $canonical = "https://infinaeconsulting.com/";
 
   <!-- QUÉ HACEMOS + CÓMO TRABAJAMOS -->
   <section class="story-section" id="que-hacemos">
-    <div class="story-intro reveal">
-      <div class="container-custom">
-        <span class="eyebrow">Metodología</span>
-        <h2 class="visually-hidden">Qué hacemos y cómo trabajamos</h2>
-        <div class="story-tabs" role="tablist" aria-label="Cambiar entre qué hacemos y cómo trabajamos">
-          <button type="button" class="story-tab is-active" data-story-tab="0" role="tab" aria-selected="true">¿Qué hacemos?</button>
-          <button type="button" class="story-tab" data-story-tab="1" role="tab" aria-selected="false">¿Cómo trabajamos?</button>
+    <div class="story-slider" data-story-slider data-active-slide="0">
+      <div class="story-intro reveal">
+        <div class="container-custom">
+          <span class="eyebrow">Metodología</span>
+          <h2 class="visually-hidden">Qué hacemos y cómo trabajamos</h2>
+          <div class="story-tabs" role="tablist" aria-label="Cambiar entre qué hacemos y cómo trabajamos">
+            <button type="button" class="story-tab is-active" data-story-tab="0" role="tab" aria-selected="true">¿Qué hacemos?</button>
+            <button type="button" class="story-tab" data-story-tab="1" role="tab" aria-selected="false">¿Cómo trabajamos?</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="story-slider" data-story-slider>
       <div class="story-track" data-story-track>
 
     <article class="story-act story-slide is-active" data-story-act data-story-slide="0">
-      <span class="story-act-numeral story-act-numeral--left" aria-hidden="true">01</span>
       <div class="container-custom">
         <div class="story-act-grid">
           <div class="story-act-content">
@@ -221,7 +220,6 @@ $canonical = "https://infinaeconsulting.com/";
     </article>
 
     <article class="story-act story-act--alt story-slide" data-story-act data-story-slide="1">
-      <span class="story-act-numeral story-act-numeral--right" aria-hidden="true">02</span>
       <div class="container-custom">
         <div class="story-act-grid">
           <div class="story-act-media reveal-left">
@@ -421,7 +419,7 @@ $canonical = "https://infinaeconsulting.com/";
 
       <ul class="expand-cards reveal-scale" data-expand-cards>
         <li class="expand-card is-active" data-expand-card tabindex="0">
-          <img class="expand-card-img" src="assets/img/placeholder-equipamiento-ordenadores.webp" alt="Ordenadores de sobremesa equipados con CRM y software de gestión de llamadas" loading="lazy" width="1200" height="900">
+          <img class="expand-card-img" src="assets/img/equipamiento-ordenadores.webp" alt="Ordenadores de sobremesa equipados con CRM y software de gestión de llamadas" loading="lazy" width="2048" height="1536">
           <span class="expand-card-scrim" aria-hidden="true"></span>
           <div class="expand-card-body">
             <span class="expand-card-label">Ordenadores</span>
@@ -433,7 +431,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </li>
         <li class="expand-card" data-expand-card tabindex="0">
-          <img class="expand-card-img" src="assets/img/placeholder-equipamiento-software.webp" alt="Software de gestión y herramientas ofimáticas para el análisis de datos" loading="lazy" width="1200" height="900">
+          <img class="expand-card-img" src="assets/img/equipamiento-software.webp" alt="Software de gestión y herramientas ofimáticas para el análisis de datos" loading="lazy" width="2048" height="1536">
           <span class="expand-card-scrim" aria-hidden="true"></span>
           <div class="expand-card-body">
             <span class="expand-card-label">Software de gestión</span>
@@ -445,7 +443,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </li>
         <li class="expand-card" data-expand-card tabindex="0">
-          <img class="expand-card-img" src="assets/img/placeholder-equipamiento-auriculares.webp" alt="Auriculares con cancelación de ruido para una comunicación clara" loading="lazy" width="1200" height="900">
+          <img class="expand-card-img" src="assets/img/equipamiento-auriculares.webp" alt="Auriculares con cancelación de ruido para una comunicación clara" loading="lazy" width="2048" height="1536">
           <span class="expand-card-scrim" aria-hidden="true"></span>
           <div class="expand-card-body">
             <span class="expand-card-label">Auriculares</span>
@@ -457,7 +455,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </li>
         <li class="expand-card" data-expand-card tabindex="0">
-          <img class="expand-card-img" src="assets/img/placeholder-equipamiento-fibra.webp" alt="Conexión a internet por fibra óptica de alta velocidad" loading="lazy" width="1200" height="900">
+          <img class="expand-card-img" src="assets/img/equipamiento-fibra.webp" alt="Conexión a internet por fibra óptica de alta velocidad" loading="lazy" width="2048" height="1536">
           <span class="expand-card-scrim" aria-hidden="true"></span>
           <div class="expand-card-body">
             <span class="expand-card-label">Fibra óptica</span>
@@ -480,30 +478,45 @@ $canonical = "https://infinaeconsulting.com/";
         <h2 class="section-title">Cómo cuidamos cada contacto</h2>
         <span class="stat-badge reveal-scale"><span class="stat-num" data-count-to="3">0</span>pasos del proceso</span>
       </div>
-      <div class="process-timeline">
-        <div class="process-step reveal-scale stagger-1">
-          <div class="process-step-head">
-            <div class="process-num">1</div>
-            <div class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg></div>
+      <div class="feature-steps" data-feature-steps>
+        <div class="feature-list">
+          <div class="feature-item is-active is-done reveal-left" data-feature-item data-feature-index="0">
+            <span class="feature-badge" aria-hidden="true">
+              <span class="feature-badge-num">1</span>
+              <svg class="feature-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <div class="feature-item-body">
+              <h4>Procesos eficientes</h4>
+              <p>Todas las llamadas se gestionan siguiendo protocolos claros y definidos: atención ágil, estructurada y profesional, con tiempos de respuesta optimizados sin comprometer la calidad.</p>
+            </div>
           </div>
-          <h4>Procesos eficientes</h4>
-          <p>Todas las llamadas se gestionan siguiendo protocolos claros y definidos: atención ágil, estructurada y profesional, con tiempos de respuesta optimizados sin comprometer la calidad.</p>
+          <div class="feature-item" data-feature-item data-feature-index="1">
+            <span class="feature-badge" aria-hidden="true">
+              <span class="feature-badge-num">2</span>
+              <svg class="feature-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <div class="feature-item-body">
+              <h4>Enfoque personalizado</h4>
+              <p>Valoramos la singularidad de cada empresa contactada. Escuchamos activamente y adaptamos nuestras propuestas a sus características, necesidades y objetivos específicos.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-feature-item data-feature-index="2">
+            <span class="feature-badge" aria-hidden="true">
+              <span class="feature-badge-num">3</span>
+              <svg class="feature-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <div class="feature-item-body">
+              <h4>Resolución ágil</h4>
+              <p>Respondemos con rapidez a cualquier duda o incidencia, con empatía y determinación, reforzando la confianza desde el primer contacto.</p>
+            </div>
+          </div>
         </div>
-        <div class="process-step reveal-scale stagger-3">
-          <div class="process-step-head">
-            <div class="process-num">2</div>
-            <div class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg></div>
-          </div>
-          <h4>Enfoque personalizado</h4>
-          <p>Valoramos la singularidad de cada empresa contactada. Escuchamos activamente y adaptamos nuestras propuestas a sus características, necesidades y objetivos específicos.</p>
-        </div>
-        <div class="process-step reveal-scale stagger-5">
-          <div class="process-step-head">
-            <div class="process-num">3</div>
-            <div class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
-          </div>
-          <h4>Resolución ágil</h4>
-          <p>Respondemos con rapidez a cualquier duda o incidencia, con empatía y determinación, reforzando la confianza desde el primer contacto.</p>
+
+        <div class="feature-visual reveal-right">
+          <img class="feature-visual-img is-active" data-feature-image data-feature-index="0" src="assets/img/atencion-procesos.webp" alt="Agente de atención al cliente siguiendo un protocolo claro y estructurado" loading="lazy" width="2048" height="1536">
+          <img class="feature-visual-img" data-feature-image data-feature-index="1" src="assets/img/atencion-enfoque.webp" alt="Agente de atención al cliente escuchando con atención personalizada" loading="lazy" width="2048" height="1536">
+          <img class="feature-visual-img" data-feature-image data-feature-index="2" src="assets/img/atencion-resolucion.webp" alt="Agente de atención al cliente resolviendo una incidencia con rapidez" loading="lazy" width="2048" height="1536">
+          <span class="feature-visual-scrim" aria-hidden="true"></span>
         </div>
       </div>
     </div>

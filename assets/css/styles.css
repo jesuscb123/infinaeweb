@@ -52,9 +52,10 @@
 
 /* ---------- Reset base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -561,26 +562,27 @@ h3.card-title { font-weight: 700; font-size: 1.2rem; }
 /* ---------- Qué hacemos / Cómo trabajamos: storytelling visual ---------- */
 .story-section { position: relative; background: var(--paper); }
 
-.story-intro { padding-block: var(--space-3) 0; }
+.story-intro { padding-block: var(--space-4) 0; position: relative; z-index: 1; }
 
 .story-act {
   position: relative;
   overflow: hidden;
   padding-top: clamp(2.6rem, 7vw, 5rem);
   padding-bottom: clamp(2.6rem, 7vw, 5rem);
+}
+.story-act:first-of-type { padding-top: clamp(.4rem, 2vw, 1.2rem); }
+
+/* El fondo con foto vive en el slider (envuelve intro + contenido) para que no quede un hueco entre las pestañas y la tarjeta */
+.story-slider {
+  position: relative;
   background-image: linear-gradient(to right, rgba(250,250,252,.97) 0%, rgba(250,250,252,.93) 42%, rgba(250,250,252,.5) 100%), url("../img/que-hacemos.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-image .3s ease;
 }
-.story-act:first-of-type { padding-top: clamp(.4rem, 2vw, 1.2rem); }
-.story-act--alt {
+.story-slider[data-active-slide="1"] {
   background-image: linear-gradient(to left, rgba(237,239,245,.97) 0%, rgba(237,239,245,.93) 42%, rgba(237,239,245,.5) 100%), url("../img/como-trabajamos.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);
-  padding-top: clamp(4.6rem, 10vw, 7rem);
 }
 
 /* ---------- Slider: Qué hacemos / Cómo trabajamos ---------- */
@@ -614,23 +616,6 @@ h3.card-title { font-weight: 700; font-size: 1.2rem; }
 }
 .story-slide.is-active { opacity: 1; pointer-events: auto; z-index: 2; }
 .is-instant, .is-instant * { transition: none !important; }
-
-.story-act-numeral {
-  position: absolute;
-  top: -4%;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(9rem, 24vw, 17rem);
-  line-height: .8;
-  color: rgba(45, 64, 133, .05);
-  -webkit-text-stroke: 1.5px rgba(45, 64, 133, .16);
-  user-select: none;
-  z-index: 0;
-  pointer-events: none;
-  will-change: transform;
-}
-.story-act-numeral--left { left: -1%; }
-.story-act-numeral--right { right: -1%; }
 
 .story-act-grid {
   position: relative;
@@ -943,51 +928,72 @@ h3.card-title { font-weight: 700; font-size: 1.2rem; }
 }
 .atencion-section .container-custom { position: relative; z-index: 1; }
 
-/* ---------- Línea de proceso ---------- */
-.process-timeline {
+/* ---------- Pasos con imagen (atención al cliente) ---------- */
+.feature-steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin-top: var(--space-4);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: center;
+  margin-top: var(--space-5);
+}
+.feature-list { display: flex; flex-direction: column; gap: 1.9rem; }
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  opacity: .4;
+  cursor: pointer;
+  transition: opacity .4s ease;
+}
+.feature-item.is-active { opacity: 1; }
+.feature-badge {
   position: relative;
-}
-.process-step { position: relative; padding: 0 1.4rem; }
-.process-step::before {
-  content: '';
-  position: absolute;
-  top: 22px; left: 0; right: 0;
-  height: 2px;
-  background: var(--border);
-  transform-origin: left;
-}
-.process-step:nth-child(1)::before { left: 50%; transform: scaleX(var(--progress-1, 0)); }
-.process-step:nth-child(2)::before { transform: scaleX(var(--progress-2, 0)); }
-.process-step:nth-child(3)::before { right: 50%; transform: scaleX(var(--progress-3, 0)); }
-.process-step-head { display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem; }
-.process-num {
-  width: 44px; height: 44px;
+  flex-shrink: 0;
+  width: 42px; height: 42px;
   border-radius: 50%;
-  background: var(--brand);
-  color: #fff;
+  border: 2px solid var(--border);
+  background: var(--mist);
+  color: var(--text-2);
+  display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display);
   font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; z-index: 1;
-  font-variant-numeric: tabular-nums;
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: transform .3s cubic-bezier(.22,1,.36,1), background-color .3s ease, border-color .3s ease, color .3s ease;
 }
-.process-step:hover .process-num { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(45,64,133,.14); }
-.process-icon {
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  background: var(--mist);
-  color: var(--brand);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+.feature-item.is-active .feature-badge { transform: scale(1.1); }
+.feature-item.is-done .feature-badge { background: var(--brand); border-color: var(--brand); color: #fff; }
+.feature-badge-check { display: none; width: 18px; height: 18px; }
+.feature-item.is-done .feature-badge-num { display: none; }
+.feature-item.is-done .feature-badge-check { display: block; }
+.feature-item-body h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: .35rem; }
+.feature-item-body p { color: var(--text-2); font-size: .92rem; margin: 0; }
+
+.feature-visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -28px rgba(27,35,64,.4);
 }
-.process-icon svg { width: 16px; height: 16px; }
-.process-step h4 { font-size: 1.05rem; font-weight: 700; }
-.process-step p { color: var(--text-2); font-size: .9rem; margin: 0; }
+.feature-visual-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1);
+}
+.feature-visual-img.is-active { opacity: 1; transform: translateY(0); z-index: 2; }
+.feature-visual-img.is-leaving { transform: translateY(-36px); z-index: 1; }
+.feature-visual-scrim {
+  position: absolute; inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(27,35,64,.55), transparent 55%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-item, .feature-badge, .feature-visual-img { transition: none; }
+}
 
 /* ---------- Galería de instalaciones ---------- */
 .gallery-grid {
@@ -1551,26 +1557,14 @@ h3.card-title { font-weight: 700; font-size: 1.2rem; }
   .nav-links.is-open { transform: translateX(0); }
   .nav-links a { font-size: 1.15rem; }
   .nav-toggle { display: block; }
+  .feature-steps { grid-template-columns: 1fr; gap: 1.8rem; }
+  .feature-visual { order: -1; }
 }
 @media (max-width: 767px) {
-  .story-act-numeral { font-size: clamp(6rem, 32vw, 9rem); }
-  .story-act--alt { clip-path: polygon(0 34px, 100% 0, 100% 100%, 0 100%); }
   .story-moments { padding-left: 2rem; }
   .story-moment:nth-child(3), .story-moment:nth-child(4) { margin-left: 0; }
   .story-moment { padding: .8rem 1rem; max-width: none; }
   .story-moment-text { font-size: 1.05rem; }
-  .process-timeline { grid-template-columns: 1fr; gap: 1.8rem; }
-  .process-step::before {
-    top: 0; bottom: 0; left: 22px; right: auto; width: 2px; height: 100%;
-    transform-origin: top;
-  }
-  .process-step:nth-child(1)::before { left: 22px; transform: scaleY(var(--progress-1, 0)); }
-  .process-step:nth-child(2)::before { left: 22px; transform: scaleY(var(--progress-2, 0)); }
-  .process-step:nth-child(3)::before { left: 22px; transform: scaleY(var(--progress-3, 0)); }
-  .process-step { padding-left: 3.4rem; }
-  .process-step-head { margin-bottom: .6rem; }
-  .process-num { position: absolute; left: 0; top: 0; }
-  .process-icon { display: none; }
   .installation-tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: .3rem; }
   .installation-track { flex-direction: column; height: auto; }
   .installation-item.is-active { flex: 0 0 220px; }
