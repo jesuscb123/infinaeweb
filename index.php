@@ -129,7 +129,7 @@ $canonical = "https://infinaeconsulting.com/";
       <div class="row align-items-center g-5">
         <div class="col-lg-7 order-lg-2 reveal-right about-text">
           <div class="eyebrow">01 · Nuestro equipo</div>
-          <h2 class="section-title">¿Quiénes somos?</h2>
+          <h2 class="section-title">¿Quiénes <span class="text-accent">somos</span>?</h2>
           <p class="lede">Infinae se posiciona como una empresa especializada en servicios de atención telefónica, con un enfoque claro en optimizar cada interacción para alcanzar resultados medibles y sostenibles.</p>
           <p>La base de nuestro desempeño está en el equipo humano que conforma Infinae. Contamos con un grupo de profesionales con perfiles diversos, seleccionados y formados específicamente en ámbitos clave como:</p>
           <ul class="about-skills">
@@ -268,12 +268,14 @@ $canonical = "https://infinaeconsulting.com/";
   </section>
 
   <!-- COMPROMISO CON LA CALIDAD -->
-  <section class="section calidad-section" id="calidad">
+  <section class="section calidad-section section-brand" id="calidad">
     <div class="container-custom">
-      <div class="section-header reveal">
-        <div class="eyebrow">02 · Compromiso con la calidad</div>
-        <h2 class="section-title">Cómo garantizamos la calidad en cada llamada</h2>
-        <span class="stat-badge reveal-scale"><span class="stat-num" data-count-to="3">0</span>pilares de calidad</span>
+      <div class="section-header section-header-minimal reveal">
+        <div class="section-header-row">
+          <div class="eyebrow">02 · Compromiso con la calidad</div>
+          <span class="stat-badge reveal-scale"><span class="stat-num" data-count-to="3">0</span>pilares de calidad</span>
+        </div>
+        <h2 class="section-title">Cómo garantizamos la <span class="text-accent">calidad</span> en cada llamada</h2>
       </div>
       <div class="quality-grid">
         <article class="quality-card reveal-scale stagger-1">
@@ -336,7 +338,7 @@ $canonical = "https://infinaeconsulting.com/";
     <div class="container-custom">
       <div class="section-header reveal">
         <div class="eyebrow">03 · Instalaciones y equipamiento</div>
-        <h2 class="section-title">Dónde y con qué trabajamos</h2>
+        <h2 class="section-title">Dónde y con qué <span class="text-accent">trabajamos</span></h2>
         <p class="lede">La oficina de Infinae en Jerez está diseñada para el rendimiento óptimo del equipo: sala principal de operaciones y salas auxiliares, área de descanso con microondas, dos aseos habilitados —incluido acceso para personas con movilidad reducida— y equipamiento de seguridad (extintores, climatización y radiadores eléctricos).</p>
       </div>
 
@@ -475,7 +477,7 @@ $canonical = "https://infinaeconsulting.com/";
     <div class="container-custom">
       <div class="section-header reveal">
         <div class="eyebrow">04 · Atención al cliente</div>
-        <h2 class="section-title">Cómo cuidamos cada contacto</h2>
+        <h2 class="section-title">Cómo cuidamos cada <span class="text-accent">contacto</span></h2>
         <span class="stat-badge reveal-scale"><span class="stat-num" data-count-to="3">0</span>pasos del proceso</span>
       </div>
       <div class="feature-steps" data-feature-steps>
@@ -528,7 +530,7 @@ $canonical = "https://infinaeconsulting.com/";
       <div class="contact-grid">
         <div class="reveal-left">
           <div class="eyebrow">Contacto</div>
-          <h2 class="section-title">Hablemos</h2>
+          <h2 class="section-title"><span class="text-accent">Hablemos</span></h2>
           <p class="lede">¿Quieres saber cómo podemos ayudar a tu empresa? Escríbenos o llámanos.</p>
 
           <div class="contact-info-grid" data-tilt-group>
