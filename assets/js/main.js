@@ -259,60 +259,15 @@
   if (cookieAccept) cookieAccept.addEventListener("click", function () { setConsent("accepted"); });
   if (cookieReject) cookieReject.addEventListener("click", function () { setConsent("rejected"); });
 
-  /* ---------- Galería / lightbox ---------- */
-  var lightbox = document.getElementById("lightbox");
-  var lightboxImg = document.getElementById("lightboxImg");
-  var lightboxCaption = document.getElementById("lightboxCaption");
-  var lightboxClose = document.getElementById("lightboxClose");
-  var lastFocusedEl = null;
-
-  if (lightbox && lightboxImg && lightboxCaption && lightboxClose) {
-    document.querySelectorAll(".gallery-item").forEach(function (item) {
-      item.setAttribute("tabindex", "0");
-      item.setAttribute("role", "button");
-      item.setAttribute("aria-label", "Ampliar foto: " + item.getAttribute("data-caption"));
-      function open() {
-        lastFocusedEl = document.activeElement;
-        var img = item.querySelector("img");
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightboxCaption.textContent = item.getAttribute("data-caption") || "";
-        lightbox.classList.add("is-open");
-        lightboxClose.focus();
-      }
-      item.addEventListener("click", open);
-      item.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
-      });
-    });
-    var closeLightbox = function () {
-      lightbox.classList.remove("is-open");
-      lightboxImg.src = "";
-      if (lastFocusedEl) lastFocusedEl.focus();
-    };
-    lightboxClose.addEventListener("click", closeLightbox);
-    lightbox.addEventListener("click", function (e) {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
-    });
-  }
-
-  /* ---------- Filtro de categorías (galería de instalaciones) ---------- */
+  /* ---------- Pestañas de categoría (instalaciones) ---------- */
   var installationTabs = document.querySelectorAll("[data-installation-tab]");
-  var installationItems = document.querySelectorAll(".installation-item");
-  if (installationTabs.length && installationItems.length) {
+  if (installationTabs.length) {
     installationTabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
-        var category = tab.getAttribute("data-installation-tab");
         installationTabs.forEach(function (t) {
           var isActive = t === tab;
           t.classList.toggle("is-active", isActive);
           t.setAttribute("aria-selected", isActive ? "true" : "false");
-        });
-        installationItems.forEach(function (item) {
-          item.classList.toggle("is-active", item.getAttribute("data-category") === category);
         });
       });
     });

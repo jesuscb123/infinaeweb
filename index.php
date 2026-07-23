@@ -30,7 +30,7 @@ $canonical = "https://infinaeconsulting.com/";
 <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon.png">
 
 <!-- Fuentes propias precargadas -->
-<link rel="preload" href="assets/fonts/sora-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -99,7 +99,7 @@ $canonical = "https://infinaeconsulting.com/";
     <div class="container-custom">
       <div>
         <div class="eyebrow hero-eyebrow">Call center B2B · Jerez de la Frontera</div>
-        <h1>Optimizamos cada interacción para <span class="text-accent">resultados medibles y sostenibles</span></h1>
+        <h1>Optimizamos cada<br><em class="hero-em">interacción</em> para<br><span class="text-accent">resultados medibles</span><br>y sostenibles.</h1>
         <p class="lede">Gestionamos llamadas salientes dirigidas a empresas: identificamos oportunidades de colaboración, recabamos necesidades laborales y construimos conexiones que impulsan el desarrollo comercial.</p>
         <div class="hero-cta">
           <a href="#contacto" class="btn-infinae btn-primary-gold">Hablemos</a>
@@ -108,20 +108,52 @@ $canonical = "https://infinaeconsulting.com/";
         <div class="hero-badges">
           <span class="badge-infinae">Jerez de la Frontera</span>
           <span class="badge-infinae">CRM propio</span>
-          <span class="badge-infinae">Fibra óptica de alta velocidad</span>
+          <span class="badge-infinae">Fibra óptica dedicada</span>
         </div>
       </div>
       <div class="hero-mark reveal">
-        <img src="assets/img/logo.webp" alt="Isotipo de Infinae — dos eslabones entrelazados">
+        <div class="hero-mark-lockup">
+          <img src="assets/img/icon-navy.webp" alt="Isotipo de Infinae — dos eslabones entrelazados">
+          <span class="hero-mark-wordmark">INFINAE</span>
+        </div>
         <span class="hero-mark-chip" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1Z"/><path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 1 1Z"/></svg>
         </span>
+        <div class="hero-status-card reveal-scale stagger-2" aria-hidden="true">
+          <span class="hero-status-dot"></span>
+          <span class="hero-status-text">
+            <span class="hero-status-eyebrow">En llamada</span>
+            <span class="hero-status-label">Atención activa en directo</span>
+          </span>
+        </div>
       </div>
     </div>
     <a href="#quienes-somos" class="hero-scroll-cue" aria-label="Desplázate para ver más contenido">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </a>
   </section>
+
+  <!-- MARQUEE DE SERVICIOS -->
+  <div class="marquee-section" aria-label="Servicios de Infinae">
+    <div class="marquee-track">
+      <ul class="marquee-group">
+        <li>Llamadas salientes B2B</li>
+        <li>Prospección comercial</li>
+        <li>Necesidades laborales</li>
+        <li>Enriquecimiento de datos</li>
+        <li>Programas de empleo</li>
+        <li>Atención estructurada</li>
+      </ul>
+      <ul class="marquee-group" aria-hidden="true">
+        <li>Llamadas salientes B2B</li>
+        <li>Prospección comercial</li>
+        <li>Necesidades laborales</li>
+        <li>Enriquecimiento de datos</li>
+        <li>Programas de empleo</li>
+        <li>Atención estructurada</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- QUIÉNES SOMOS -->
   <section class="section about-section" id="quienes-somos">
@@ -131,7 +163,7 @@ $canonical = "https://infinaeconsulting.com/";
           <div class="eyebrow">01 · Nuestro equipo</div>
           <h2 class="section-title">¿Quiénes <span class="text-accent">somos</span>?</h2>
           <p class="lede">Infinae se posiciona como una empresa especializada en servicios de atención telefónica, con un enfoque claro en optimizar cada interacción para alcanzar resultados medibles y sostenibles.</p>
-          <p>La base de nuestro desempeño está en el equipo humano que conforma Infinae. Contamos con un grupo de profesionales con perfiles diversos, seleccionados y formados específicamente en ámbitos clave como:</p>
+          <p>La base de nuestro desempeño está en el equipo humano que conforma Infinae. Contamos con un grupo de profesionales con perfiles diversos, seleccionados y formados específicamente en ámbitos clave.</p>
           <ul class="about-skills">
             <li class="reveal-scale stagger-1"><span class="about-skills-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Atención al cliente</li>
             <li class="reveal-scale stagger-2"><span class="about-skills-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Comunicación efectiva</li>
@@ -144,7 +176,7 @@ $canonical = "https://infinaeconsulting.com/";
         <div class="col-lg-5 order-lg-1 reveal-left">
           <div class="about-media" data-tilt-group>
             <div class="about-media-tilt" data-tilt>
-              <img class="reveal-blur" src="assets/img/quienes-somos.webp" alt="Equipo de Infinae trabajando con auriculares en la sala de operaciones del call center" loading="lazy" width="1254" height="1254">
+              <img class="reveal-blur" src="assets/img/team-wide.jpg" alt="Equipo de Infinae en las oficinas de Jerez" loading="lazy" width="1408" height="1600">
             </div>
             <span class="about-media-chip" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 5 18.5V20"/><circle cx="9.5" cy="8" r="3.2"/><path d="M16.5 8.3a3 3 0 1 1 1.9 5.4"/><path d="M19 20v-1.5a3 3 0 0 0-1.7-2.7"/></svg>
@@ -164,7 +196,7 @@ $canonical = "https://infinaeconsulting.com/";
     <div class="story-slider" data-story-slider data-active-slide="0">
       <div class="story-intro reveal">
         <div class="container-custom">
-          <span class="eyebrow">Metodología</span>
+          <span class="eyebrow">02 · Metodología</span>
           <h2 class="visually-hidden">Qué hacemos y cómo trabajamos</h2>
           <div class="story-tabs" role="tablist" aria-label="Cambiar entre qué hacemos y cómo trabajamos">
             <button type="button" class="story-tab is-active" data-story-tab="0" role="tab" aria-selected="true">¿Qué hacemos?</button>
@@ -179,40 +211,44 @@ $canonical = "https://infinaeconsulting.com/";
       <div class="container-custom">
         <div class="story-act-grid">
           <div class="story-act-content">
-            <h3 class="story-act-title reveal-blur">¿Qué hacemos?</h3>
-            <p class="story-act-text reveal-blur">Desde nuestro call center gestionamos llamadas salientes dirigidas a empresas.</p>
+            <h2 class="story-act-title reveal-blur">¿Qué<br><span class="text-accent">hacemos?</span></h2>
+            <p class="story-act-text reveal-blur">Desde nuestro call center gestionamos llamadas salientes dirigidas a empresas, siguiendo un método claro en tres fases.</p>
 
-            <div class="story-moments">
-              <svg class="story-moments-line" viewBox="0 0 60 320" preserveAspectRatio="none" aria-hidden="true">
-                <defs>
-                  <linearGradient id="story-line-gradient-1" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#2D4085"/>
-                    <stop offset="1" stop-color="#B98A46"/>
-                  </linearGradient>
-                </defs>
-                <path data-story-line stroke="url(#story-line-gradient-1)" pathLength="1" d="M6 8 C 58 55, 4 110, 40 165 S 10 275, 46 312" />
-              </svg>
-              <div class="story-moment reveal-blur stagger-1" data-story-moment>
-                <span class="story-moment-num">01</span>
-                <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-                <p class="story-moment-text"> Gestionamos llamadas salientes dirigidas a empresas, con el objetivo de identificar oportunidades de colaboración</p>
-              </div>
-              <div class="story-moment reveal-blur stagger-2" data-story-moment>
-                <span class="story-moment-num">02</span>
-                <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg></span>
-                <p class="story-moment-text">Recabar información sobre necesidades laborales</p>
-              </div>
-              <div class="story-moment reveal-blur stagger-3" data-story-moment>
-                <span class="story-moment-num">03</span>
-                <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
-                <p class="story-moment-text">Enriquecer nuestra base de datos para programas de empleo y desarrollo comercial</p>
-              </div>
+            <div class="story-steps">
+              <article class="story-step reveal-blur stagger-1">
+                <span class="story-step-num">01</span>
+                <div class="story-step-body">
+                  <h3 class="story-step-title">Gestionamos llamadas salientes dirigidas a empresas</h3>
+                  <p class="story-step-desc">Con el objetivo de identificar oportunidades de colaboración y abrir puertas comerciales concretas.</p>
+                </div>
+                <span class="story-step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </article>
+              <article class="story-step reveal-blur stagger-2">
+                <span class="story-step-num">02</span>
+                <div class="story-step-body">
+                  <h3 class="story-step-title">Recabamos información sobre necesidades laborales</h3>
+                  <p class="story-step-desc">Escuchamos a cada organización para entender su realidad y anticipar los perfiles y servicios que necesita.</p>
+                </div>
+                <span class="story-step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </article>
+              <article class="story-step reveal-blur stagger-3">
+                <span class="story-step-num">03</span>
+                <div class="story-step-body">
+                  <h3 class="story-step-title">Enriquecemos nuestra base de datos</h3>
+                  <p class="story-step-desc">Alimentamos programas de empleo y desarrollo comercial con datos vivos, cualificados y actualizados.</p>
+                </div>
+                <span class="story-step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </article>
             </div>
           </div>
 
           <div class="story-act-media reveal-right">
             <div class="story-act-photo">
-              <img src="assets/img/que-hacemos-tarjeta.webp" alt="Agente de Infinae con auriculares gestionando una llamada saliente en la sala de operaciones" loading="lazy" width="1536" height="1024">
+              <img src="assets/img/agent-portrait.jpg" alt="Agente de Infinae en plena llamada" loading="lazy" width="1200" height="1504">
+              <div class="story-act-photo-overlay">
+                <span class="story-act-photo-eyebrow">Cada llamada</span>
+                <span class="story-act-photo-title">es una oportunidad</span>
+              </div>
             </div>
           </div>
         </div>
@@ -224,39 +260,40 @@ $canonical = "https://infinaeconsulting.com/";
         <div class="story-act-grid">
           <div class="story-act-media reveal-left">
             <div class="story-act-photo">
-              <img src="assets/img/como-trabajamos-tarjeta.webp" alt="Agente de Infinae siguiendo el guion de llamada en pantalla junto al resto del equipo" loading="lazy" width="1536" height="1024">
+              <img src="assets/img/headset.jpg" alt="Agente de Infinae siguiendo el guion de llamada con diadema profesional" loading="lazy" width="1008" height="1200">
+              <div class="story-act-photo-overlay">
+                <span class="story-act-photo-eyebrow">Cada equipo</span>
+                <span class="story-act-photo-title">sigue un método</span>
+              </div>
             </div>
           </div>
 
           <div class="story-act-content">
-            <h3 class="story-act-title reveal-blur">¿Cómo trabajamos?</h3>
+            <h2 class="story-act-title reveal-blur">¿Cómo<br><span class="text-accent">trabajamos?</span></h2>
             <p class="story-act-text reveal-blur">Aplicamos una metodología estructurada, basada en guiones adaptables y un protocolo claro de actuación.</p>
 
-            <div class="story-moments">
-              <svg class="story-moments-line" viewBox="0 0 60 320" preserveAspectRatio="none" aria-hidden="true">
-                <defs>
-                  <linearGradient id="story-line-gradient-2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#2D4085"/>
-                    <stop offset="1" stop-color="#B98A46"/>
-                  </linearGradient>
-                </defs>
-                <path data-story-line stroke="url(#story-line-gradient-2)" pathLength="1" d="M6 8 C 58 55, 4 110, 40 165 S 10 275, 46 312" />
-              </svg>
-              <div class="story-moment reveal-blur stagger-1" data-story-moment>
-                <span class="story-moment-num">04</span>
-                <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></span>
-                <p class="story-moment-text">Personalización en el trato</p>
-              </div>
-              <div class="story-moment reveal-blur stagger-2" data-story-moment>
-                <span class="story-moment-num">05</span>
-                <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></span>
-                <p class="story-moment-text">Uso adecuado de herramientas digitales</p>
-              </div>
-              <div class="story-moment reveal-blur stagger-3" data-story-moment>
-                <span class="story-moment-num">06</span>
-                <span class="story-moment-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
-                <p class="story-moment-text">Seguimiento sistemático de cada interacción</p>
-              </div>
+            <div class="story-steps">
+              <article class="story-step reveal-blur stagger-1">
+                <span class="story-step-num">04</span>
+                <div class="story-step-body">
+                  <h3 class="story-step-title">Personalización en el trato</h3>
+                </div>
+                <span class="story-step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </article>
+              <article class="story-step reveal-blur stagger-2">
+                <span class="story-step-num">05</span>
+                <div class="story-step-body">
+                  <h3 class="story-step-title">Uso adecuado de herramientas digitales</h3>
+                </div>
+                <span class="story-step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </article>
+              <article class="story-step reveal-blur stagger-3">
+                <span class="story-step-num">06</span>
+                <div class="story-step-body">
+                  <h3 class="story-step-title">Seguimiento sistemático de cada interacción</h3>
+                </div>
+                <span class="story-step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </article>
             </div>
           </div>
         </div>
@@ -279,54 +316,39 @@ $canonical = "https://infinaeconsulting.com/";
       </div>
       <div class="quality-grid">
         <article class="quality-card reveal-scale stagger-1">
-          <div class="quality-card-media">
-            <img src="assets/img/fondo-analisis.webp" alt="Panel con métricas de llamadas, tiempos de respuesta y objetivos, analizado con una lupa" loading="lazy" width="1492" height="1054">
-          </div>
-          <div class="quality-card-body">
-            <h3 class="quality-card-title"><span>Evaluación</span></h3>
-            <div class="quality-card-extra">
-              <div class="quality-card-meta">
-                <span class="quality-card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg>
-                </span>
-                <span class="quality-card-tag">Evaluación</span>
-              </div>
-              <p class="quality-card-text">Análisis constante de los resultados obtenidos en las llamadas, los tiempos de respuesta y el cumplimiento de los objetivos establecidos, para identificar áreas de mejora y ajustar la estrategia a tiempo.</p>
-            </div>
+          <img class="quality-card-img" src="assets/img/supervision.jpg" alt="Analizamos cada llamada" loading="lazy" width="1408" height="1008">
+          <span class="quality-card-scrim" aria-hidden="true"></span>
+          <span class="quality-card-tag">
+            <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg></span>
+            Evaluación
+          </span>
+          <div class="quality-card-content">
+            <h3 class="quality-card-title">Analizamos cada llamada</h3>
+            <p class="quality-card-text">Análisis constante de resultados, tiempos de respuesta y cumplimiento de objetivos para identificar áreas de mejora y ajustar la estrategia a tiempo.</p>
           </div>
         </article>
         <article class="quality-card reveal-scale stagger-3">
-          <div class="quality-card-media">
-            <img src="assets/img/fondo-supervision.webp" alt="Agente con auriculares supervisando en tiempo real varios paneles con el rendimiento de las llamadas" loading="lazy" width="1491" height="1055">
-          </div>
-          <div class="quality-card-body">
-            <h3 class="quality-card-title"><span>Supervisión</span></h3>
-            <div class="quality-card-extra">
-              <div class="quality-card-meta">
-                <span class="quality-card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                </span>
-                <span class="quality-card-tag">Supervisión</span>
-              </div>
-              <p class="quality-card-text">Nuestros coordinadores siguen la operativa en tiempo real, ofrecen retroalimentación continua al personal, resuelven incidencias de forma ágil y velan por el mantenimiento de los estándares de calidad.</p>
-            </div>
+          <img class="quality-card-img" src="assets/img/team-wide.jpg" alt="Acompañamos en tiempo real" loading="lazy" width="1408" height="1600">
+          <span class="quality-card-scrim" aria-hidden="true"></span>
+          <span class="quality-card-tag">
+            <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            Supervisión
+          </span>
+          <div class="quality-card-content">
+            <h3 class="quality-card-title">Acompañamos en tiempo real</h3>
+            <p class="quality-card-text">Un equipo de coordinación monitoriza las campañas activas, resuelve incidencias y garantiza que cada interacción cumpla nuestros estándares.</p>
           </div>
         </article>
         <article class="quality-card reveal-scale stagger-5">
-          <div class="quality-card-media">
-            <img src="assets/img/fondo-formacion-continua.webp" alt="Formadora impartiendo una sesión de formación continua a un equipo de atención al cliente" loading="lazy" width="1491" height="1055">
-          </div>
-          <div class="quality-card-body">
-            <h3 class="quality-card-title"><span>Formación continua</span></h3>
-            <div class="quality-card-extra">
-              <div class="quality-card-meta">
-                <span class="quality-card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
-                </span>
-                <span class="quality-card-tag">Formación continua</span>
-              </div>
-              <p class="quality-card-text">Plan de desarrollo profesional con actualizaciones periódicas en herramientas, técnicas de comunicación efectiva y tendencias del sector, para una atención moderna y en constante evolución.</p>
-            </div>
+          <img class="quality-card-img" src="assets/img/training.jpg" alt="Equipos que evolucionan" loading="lazy" width="1408" height="1008">
+          <span class="quality-card-scrim" aria-hidden="true"></span>
+          <span class="quality-card-tag">
+            <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span>
+            Formación continua
+          </span>
+          <div class="quality-card-content">
+            <h3 class="quality-card-title">Equipos que evolucionan</h3>
+            <p class="quality-card-text">Plan formativo permanente: los profesionales se actualizan en técnicas de comunicación, gestión y herramientas propias del sector.</p>
           </div>
         </article>
       </div>
@@ -345,71 +367,29 @@ $canonical = "https://infinaeconsulting.com/";
       <div class="installation-tabs reveal-scale" role="tablist" aria-label="Categorías de instalaciones" data-installation-tabs>
         <button class="installation-tab is-active" type="button" role="tab" aria-selected="true" data-installation-tab="zona-trabajo">Zona de trabajo</button>
         <button class="installation-tab" type="button" role="tab" aria-selected="false" data-installation-tab="equipos">Equipos informáticos</button>
-        <button class="installation-tab" type="button" role="tab" aria-selected="false" data-installation-tab="banos">Baños</button>
+        <button class="installation-tab" type="button" role="tab" aria-selected="false" data-installation-tab="salas">Salas auxiliares</button>
       </div>
 
-      <div class="installation-track" id="galleryGrid" data-tilt-group data-installation-track>
-        <div class="gallery-item installation-item is-active" data-tilt data-category="zona-trabajo" data-caption="Fila de puestos de trabajo equipados">
-          <img src="assets/img/zonas-trabajo/8.webp" alt="Fila de puestos de trabajo con monitores en la sala principal" loading="lazy" width="615" height="461">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Fila de puestos de trabajo</span>
+      <div class="installation-photos">
+        <div class="installation-photo installation-photo--large reveal-scale stagger-1">
+          <img src="assets/img/facility-1.jpg" alt="Fila de puestos de trabajo" loading="lazy" width="1008" height="1408">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">01</span>Fila de puestos de trabajo</span>
         </div>
-        <div class="gallery-item installation-item is-active" data-tilt data-category="zona-trabajo" data-caption="Zona de trabajo con equipos y auriculares">
-          <img src="assets/img/zonas-trabajo/9.webp" alt="Zona de trabajo con monitores y auriculares, con roll-ups de Infinae y Almina Eventos" loading="lazy" width="768" height="1024">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Zona de trabajo con auriculares</span>
+        <div class="installation-photo reveal-scale stagger-2">
+          <img src="assets/img/team-wide.jpg" alt="Zona de trabajo con auriculares" loading="lazy" width="1408" height="1600">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">02</span>Zona de trabajo con auriculares</span>
         </div>
-        <div class="gallery-item installation-item is-active" data-tilt data-category="zona-trabajo" data-caption="Puesto de trabajo con monitor y auriculares">
-          <img src="assets/img/zonas-trabajo/11.webp" alt="Puesto de trabajo individual con monitor Dell y auriculares" loading="lazy" width="615" height="820">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Puesto de trabajo individual</span>
+        <div class="installation-photo reveal-scale stagger-3">
+          <img src="assets/img/computers.jpg" alt="Puesto de trabajo individual" loading="lazy" width="1408" height="1008">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">03</span>Puesto de trabajo individual</span>
         </div>
-        <div class="gallery-item installation-item is-active" data-tilt data-category="zona-trabajo" data-caption="Sala de trabajo con varias filas de puestos">
-          <img src="assets/img/zonas-trabajo/21.webp" alt="Sala de trabajo amplia con varias filas de puestos y señalización de salida" loading="lazy" width="1024" height="768">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Sala de trabajo</span>
-        </div>
-
-        <div class="gallery-item installation-item" data-tilt data-category="equipos" data-caption="Puestos informáticos en la sala de operaciones">
-          <img src="assets/img/equipos-informaticos/5.webp" alt="Puestos informáticos en la sala de operaciones, con monitores y CPU de sobremesa" loading="lazy" width="615" height="461">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Puestos informáticos</span>
-        </div>
-        <div class="gallery-item installation-item" data-tilt data-category="equipos" data-caption="Equipos informáticos con auriculares">
-          <img src="assets/img/equipos-informaticos/6.webp" alt="Equipos informáticos de sobremesa con monitores y auriculares en fila" loading="lazy" width="615" height="820">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Equipos con auriculares</span>
-        </div>
-        <div class="gallery-item installation-item" data-tilt data-category="equipos" data-caption="Equipo informático individual">
-          <img src="assets/img/equipos-informaticos/10.webp" alt="Equipo informático individual con monitor Samsung, teclado y ratón" loading="lazy" width="615" height="820">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Equipo informático individual</span>
-        </div>
-
-        <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Aseo con lavabo y estantería">
-          <img src="assets/img/baños/16.webp" alt="Aseo con lavabo y estantería de almacenaje" loading="lazy" width="615" height="820">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Aseo con lavabo y estantería</span>
-        </div>
-        <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Aseo con urinarios y lavabos">
-          <img src="assets/img/baños/17.webp" alt="Aseo con urinarios y lavabos en fila" loading="lazy" width="615" height="820">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Aseo con urinarios y lavabos</span>
-        </div>
-        <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Aseo individual con inodoro y lavabo">
-          <img src="assets/img/baños/18.webp" alt="Aseo individual con inodoro, mampara y lavabo" loading="lazy" width="615" height="820">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Aseo individual</span>
-        </div>
-        <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Aseo con inodoro y estantería">
-          <img src="assets/img/baños/19.webp" alt="Aseo con inodoro y estantería de almacenaje" loading="lazy" width="615" height="820">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Aseo con estantería</span>
-        </div>
-        <div class="gallery-item installation-item" data-tilt data-category="banos" data-caption="Lavabo del aseo">
-          <img src="assets/img/baños/20.webp" alt="Lavabo suspendido en la pared del aseo" loading="lazy" width="615" height="820">
-          <span class="gallery-zoom-cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m21 21-4.35-4.35"/></svg></span>
-          <span class="gallery-caption">Lavabo del aseo</span>
+        <div class="installation-photo reveal-scale stagger-4">
+          <img src="assets/img/facility-1.jpg" alt="Sala principal" loading="lazy" width="1008" height="1408">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">04</span>Sala principal</span>
         </div>
       </div>
 
@@ -524,14 +504,38 @@ $canonical = "https://infinaeconsulting.com/";
     </div>
   </section>
 
+  <!-- CIFRAS CLAVE -->
+  <section class="stats-section" aria-label="Cifras clave de Infinae">
+    <div class="container-custom">
+      <div class="stats-grid">
+        <div class="stats-item reveal-scale stagger-1">
+          <span class="stats-num" data-count-to="3">0</span>
+          <span class="stats-label">Ámbitos clave de especialización</span>
+        </div>
+        <div class="stats-item reveal-scale stagger-2">
+          <span class="stats-num">B2B</span>
+          <span class="stats-label">Enfoque comercial exclusivo</span>
+        </div>
+        <div class="stats-item reveal-scale stagger-3">
+          <span class="stats-num">Tiempo real</span>
+          <span class="stats-label">Supervisión continua de llamadas</span>
+        </div>
+        <div class="stats-item reveal-scale stagger-4">
+          <span class="stats-num">Fibra óptica</span>
+          <span class="stats-label">Conectividad dedicada de alta velocidad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACTO -->
   <section class="section section-brand contacto-section" id="contacto">
     <div class="container-custom">
       <div class="contact-grid">
         <div class="reveal-left">
-          <div class="eyebrow">Contacto</div>
+          <div class="eyebrow">06 · Contacto</div>
           <h2 class="section-title"><span class="text-accent">Hablemos</span></h2>
-          <p class="lede">¿Quieres saber cómo podemos ayudar a tu empresa? Escríbenos o llámanos.</p>
+          <p class="lede">¿Quieres saber cómo podemos ayudar a tu empresa? Escríbenos o llámanos y te contamos.</p>
 
           <div class="contact-info-grid" data-tilt-group>
             <div class="contact-info-item reveal-scale stagger-1" data-tilt>
@@ -547,17 +551,8 @@ $canonical = "https://infinaeconsulting.com/";
               <div><h4>Email</h4><p><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></p></div>
             </div>
             <div class="contact-info-item reveal-scale stagger-4" data-tilt>
-              <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg></div>
-              <div><h4>Redes sociales</h4>
-                <div class="social-links" style="margin-top:.4rem;">
-                  <a href="https://www.instagram.com/infinaeconsulting" target="_blank" rel="noopener" aria-label="Instagram de Infinae">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
-                  </a>
-                  <a href="https://www.facebook.com/profile.php?id=61566405762113" target="_blank" rel="noopener" aria-label="Facebook de Infinae">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 4h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3Z"/></svg>
-                  </a>
-                </div>
-              </div>
+              <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1Z"/><path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 1 1Z"/></svg></div>
+              <div><h4>Horario</h4><p>L–V · 9:00 – 18:00</p></div>
             </div>
           </div>
           <div class="contact-map reveal-scale stagger-5">
@@ -566,23 +561,25 @@ $canonical = "https://infinaeconsulting.com/";
         </div>
 
         <form class="contact-form reveal-right" id="contactForm" novalidate>
-          <div class="form-row">
-            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder=" " required>
-            <label for="nombre">Nombre</label>
-            <p class="form-error">Escribe tu nombre.</p>
+          <div class="form-row-grid">
+            <div class="form-row">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Cómo te llamas" required>
+              <p class="form-error">Escribe tu nombre.</p>
+            </div>
+            <div class="form-row">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Tu empresa">
+            </div>
           </div>
           <div class="form-row">
-            <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder=" ">
-            <label for="empresa">Empresa</label>
-          </div>
-          <div class="form-row">
-            <input type="email" id="email" name="email" autocomplete="email" placeholder=" " required>
             <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="tu@email.com" required>
             <p class="form-error">Introduce un email válido.</p>
           </div>
           <div class="form-row">
-            <textarea id="mensaje" name="mensaje" placeholder=" " required></textarea>
             <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué necesitas" required></textarea>
             <p class="form-error">Cuéntanos brevemente qué necesitas.</p>
           </div>
           <button type="submit" class="btn-infinae btn-primary-gold form-submit btn-magnetic">
@@ -591,6 +588,7 @@ $canonical = "https://infinaeconsulting.com/";
               <span class="submit-label">Enviar mensaje</span>
             </span>
           </button>
+          <p class="form-note">Respondemos en menos de 24 horas laborables.</p>
           <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
         </form>
       </div>
@@ -656,13 +654,6 @@ $canonical = "https://infinaeconsulting.com/";
     <button class="btn-infinae btn-primary-gold" id="cookieAccept">Aceptar</button>
     <button class="btn-infinae btn-outline-brand" id="cookieReject">Rechazar</button>
   </div>
-</div>
-
-<!-- Lightbox de galería -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">&times;</button>
-  <img id="lightboxImg" src="" alt="">
-  <p class="lightbox-caption" id="lightboxCaption"></p>
 </div>
 
 <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
