@@ -85,9 +85,11 @@
     }
   }
 
-  /* ---------- Storytelling de metodología: trazo de la línea ---------- */
+  /* ---------- Storytelling de metodología: trazo de la línea + parallax de fondo ---------- */
   var storyActs = Array.prototype.slice.call(document.querySelectorAll("[data-story-act]"));
-  if (storyActs.length) {
+  var storySectionEl = document.querySelector("[data-story-slider]");
+  var storyBgEls = storySectionEl ? Array.prototype.slice.call(storySectionEl.querySelectorAll(".story-bg")) : [];
+  if (storyActs.length || storyBgEls.length) {
     var storyTicking = false;
     var updateStoryScroll = function () {
       storyActs.forEach(function (act) {
@@ -99,6 +101,14 @@
         var line = act.querySelector(".story-moments-line");
         if (line) line.style.setProperty("--story-line-progress", (1 - progress).toFixed(3));
       });
+
+      if (storyBgEls.length) {
+        var sliderRect = storySectionEl.getBoundingClientRect();
+        var vh2 = window.innerHeight;
+        var bgProgress = Math.min(Math.max((vh2 - sliderRect.top) / (vh2 + sliderRect.height), 0), 1);
+        var shift = (bgProgress - 0.5) * 60; // recorrido de -30px a 30px mientras se hace scroll de la sección
+        storyBgEls.forEach(function (bg) { bg.style.setProperty("--story-bg-shift", shift.toFixed(1) + "px"); });
+      }
     };
     updateStoryScroll();
     window.addEventListener("scroll", function () {
@@ -132,11 +142,17 @@
         tab.setAttribute("aria-selected", isActive ? "true" : "false");
       });
     };
+    var setActiveBg = function (index) {
+      storySlider.querySelectorAll(".story-bg").forEach(function (bg) {
+        bg.classList.toggle("is-active", parseInt(bg.getAttribute("data-story-bg"), 10) === index);
+      });
+    };
 
     var goToStorySlide = function (nextIndex, dir) {
       if (storyAnimating || nextIndex === storyCurrent || !storySlides[nextIndex]) return;
       storyAnimating = true;
       setActiveTab(nextIndex);
+      setActiveBg(nextIndex);
       storySlider.setAttribute("data-active-slide", String(nextIndex));
       var outgoing = storySlides[storyCurrent];
       var incoming = storySlides[nextIndex];

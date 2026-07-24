@@ -194,6 +194,9 @@ $canonical = "https://infinaeconsulting.com/";
   <!-- QUÉ HACEMOS + CÓMO TRABAJAMOS -->
   <section class="story-section" id="que-hacemos">
     <div class="story-slider" data-story-slider data-active-slide="0">
+      <div class="story-bg story-bg--que is-active" data-story-bg="0" aria-hidden="true"></div>
+      <div class="story-bg story-bg--como" data-story-bg="1" aria-hidden="true"></div>
+
       <div class="story-intro reveal">
         <div class="container-custom">
           <span class="eyebrow">02 · Metodología</span>

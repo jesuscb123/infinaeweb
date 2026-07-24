@@ -730,6 +730,53 @@ h3.card-title { font-weight: 700; font-size: 1.2rem; }
   z-index: 0;
 }
 
+/* Fondo fotográfico por pestaña: cubre el slider, con difuminado horizontal
+   (fade a --cream) hacia el lado donde va el texto para que siga siendo legible. */
+.story-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.12) translateY(0);
+  transition: opacity 1s ease, transform 1.8s cubic-bezier(.22, 1, .36, 1);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.story-bg.is-active {
+  opacity: .5;
+  transform: scale(1.02) translateY(var(--story-bg-shift, 0px));
+}
+/* "Qué hacemos": texto a la izquierda, foto a la derecha -> ocultar imagen a la izquierda, mostrarla bajo la foto */
+.story-bg--que {
+  background-image: url('../img/que-hacemos.webp');
+  mask-image: linear-gradient(to right, transparent 0%, transparent 22%, var(--cream) 78%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 22%, var(--cream) 78%);
+}
+/* "Cómo trabajamos": diseño espejo, foto a la izquierda y texto a la derecha -> ocultar imagen a la derecha */
+.story-bg--como {
+  background-image: url('../img/como-trabajamos.webp');
+  mask-image: linear-gradient(to right, var(--cream) 0%, var(--cream) 22%, transparent 78%);
+  -webkit-mask-image: linear-gradient(to right, var(--cream) 0%, var(--cream) 22%, transparent 78%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-bg { transition: opacity .3s ease; transform: none !important; }
+}
+@media (max-width: 1023px) {
+  /* En móvil el contenido va apilado a ancho completo: difuminado vertical, según qué bloque cae arriba en cada pestaña */
+  .story-bg--que {
+    /* Texto arriba, foto abajo -> ocultar arriba, mostrar abajo */
+    mask-image: linear-gradient(to bottom, transparent 0%, transparent 38%, var(--cream) 82%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 38%, var(--cream) 82%);
+  }
+  .story-bg--como {
+    /* Foto arriba, texto abajo -> mostrar arriba, ocultar abajo */
+    mask-image: linear-gradient(to bottom, var(--cream) 0%, var(--cream) 18%, transparent 62%);
+    -webkit-mask-image: linear-gradient(to bottom, var(--cream) 0%, var(--cream) 18%, transparent 62%);
+  }
+}
+
 /* ---------- Slider: Qué hacemos / Cómo trabajamos ---------- */
 .story-tabs { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: var(--space-3); }
 .story-tab {
