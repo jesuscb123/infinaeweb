@@ -370,29 +370,75 @@ $canonical = "https://infinaeconsulting.com/";
       <div class="installation-tabs reveal-scale" role="tablist" aria-label="Categorías de instalaciones" data-installation-tabs>
         <button class="installation-tab is-active" type="button" role="tab" aria-selected="true" data-installation-tab="zona-trabajo">Zona de trabajo</button>
         <button class="installation-tab" type="button" role="tab" aria-selected="false" data-installation-tab="equipos">Equipos informáticos</button>
-        <button class="installation-tab" type="button" role="tab" aria-selected="false" data-installation-tab="salas">Salas auxiliares</button>
+        <button class="installation-tab" type="button" role="tab" aria-selected="false" data-installation-tab="banos">Baños</button>
       </div>
 
-      <div class="installation-photos">
+      <div class="installation-photos is-active" data-installation-category="zona-trabajo">
         <div class="installation-photo installation-photo--large reveal-scale stagger-1">
-          <img src="assets/img/facility-1.jpg" alt="Fila de puestos de trabajo" loading="lazy" width="1008" height="1408">
+          <img src="assets/img/zonas-trabajo/21.webp" alt="Sala principal de operaciones con varias filas de puestos de trabajo" loading="lazy" width="1024" height="768">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
-          <span class="installation-photo-caption"><span class="installation-photo-num">01</span>Fila de puestos de trabajo</span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">01</span>Sala principal de operaciones</span>
         </div>
         <div class="installation-photo reveal-scale stagger-2">
-          <img src="assets/img/team-wide.jpg" alt="Zona de trabajo con auriculares" loading="lazy" width="1408" height="1600">
+          <img src="assets/img/zonas-trabajo/9.webp" alt="Puestos de trabajo equipados con auriculares y monitores" loading="lazy" width="768" height="1024">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
-          <span class="installation-photo-caption"><span class="installation-photo-num">02</span>Zona de trabajo con auriculares</span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">02</span>Puestos con auriculares y monitores</span>
         </div>
         <div class="installation-photo reveal-scale stagger-3">
-          <img src="assets/img/computers.jpg" alt="Puesto de trabajo individual" loading="lazy" width="1408" height="1008">
+          <img src="assets/img/zonas-trabajo/8.webp" alt="Fila de puestos de trabajo con monitores" loading="lazy" width="615" height="461">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
-          <span class="installation-photo-caption"><span class="installation-photo-num">03</span>Puesto de trabajo individual</span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">03</span>Fila de puestos de trabajo</span>
         </div>
         <div class="installation-photo reveal-scale stagger-4">
-          <img src="assets/img/facility-1.jpg" alt="Sala principal" loading="lazy" width="1008" height="1408">
+          <img src="assets/img/zonas-trabajo/11.webp" alt="Puesto de trabajo individual con monitor, teclado y auriculares" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
-          <span class="installation-photo-caption"><span class="installation-photo-num">04</span>Sala principal</span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">04</span>Puesto de trabajo individual</span>
+        </div>
+      </div>
+
+      <div class="installation-photos installation-photos--equipos" data-installation-category="equipos">
+        <div class="installation-photo installation-photo--large reveal-scale stagger-1">
+          <img src="assets/img/equipos-informaticos/5.webp" alt="Sala equipada con ordenadores y monitores" loading="lazy" width="615" height="461">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">01</span>Sala equipada con ordenadores y monitores</span>
+        </div>
+        <div class="installation-photo reveal-scale stagger-2">
+          <img src="assets/img/equipos-informaticos/6.webp" alt="Equipos informáticos en cada puesto de trabajo" loading="lazy" width="615" height="820">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">02</span>Equipos informáticos en cada puesto</span>
+        </div>
+        <div class="installation-photo reveal-scale stagger-3">
+          <img src="assets/img/equipos-informaticos/10.webp" alt="Ordenador individual con monitor y teclado" loading="lazy" width="615" height="820">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">03</span>Ordenador individual</span>
+        </div>
+      </div>
+
+      <div class="installation-photos" data-installation-category="banos">
+        <div class="installation-photo installation-photo--large reveal-scale stagger-1">
+          <img src="assets/img/baños/17.webp" alt="Aseo con inodoro, urinarios y lavabos" loading="lazy" width="615" height="820">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">01</span>Aseo con inodoro, urinarios y lavabos</span>
+        </div>
+        <div class="installation-photo reveal-scale stagger-2">
+          <img src="assets/img/baños/16.webp" alt="Lavabo con módulo de almacenaje auxiliar" loading="lazy" width="615" height="820">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">02</span>Lavabo con módulo de almacenaje</span>
+        </div>
+        <div class="installation-photo reveal-scale stagger-3">
+          <img src="assets/img/baños/18.webp" alt="Aseo individual con inodoro y lavabo" loading="lazy" width="615" height="820">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">03</span>Aseo individual</span>
+        </div>
+        <div class="installation-photo reveal-scale stagger-4">
+          <img src="assets/img/baños/19.webp" alt="Módulo de almacenaje junto al inodoro" loading="lazy" width="615" height="820">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">04</span>Módulo de almacenaje</span>
+        </div>
+        <div class="installation-photo reveal-scale stagger-5">
+          <img src="assets/img/baños/20.webp" alt="Lavabo individual" loading="lazy" width="615" height="820">
+          <span class="installation-photo-scrim" aria-hidden="true"></span>
+          <span class="installation-photo-caption"><span class="installation-photo-num">05</span>Lavabo individual</span>
         </div>
       </div>
 

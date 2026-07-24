@@ -275,15 +275,29 @@
   if (cookieAccept) cookieAccept.addEventListener("click", function () { setConsent("accepted"); });
   if (cookieReject) cookieReject.addEventListener("click", function () { setConsent("rejected"); });
 
-  /* ---------- Pestañas de categoría (instalaciones) ---------- */
+  /* ---------- Pestañas de categoría (instalaciones): cambia el grupo de fotos visible ---------- */
   var installationTabs = document.querySelectorAll("[data-installation-tab]");
+  var installationGroups = Array.prototype.slice.call(document.querySelectorAll("[data-installation-category]"));
   if (installationTabs.length) {
+    var installationRevealSelector = ".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur";
     installationTabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
+        var category = tab.getAttribute("data-installation-tab");
         installationTabs.forEach(function (t) {
           var isActive = t === tab;
           t.classList.toggle("is-active", isActive);
           t.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+        installationGroups.forEach(function (group) {
+          var isActive = group.getAttribute("data-installation-category") === category;
+          group.classList.toggle("is-active", isActive);
+          if (isActive) {
+            // Reinicia y relanza la animación de entrada de las fotos cada vez que se muestra el grupo
+            var items = group.querySelectorAll(installationRevealSelector);
+            items.forEach(function (el) { el.classList.remove("is-visible"); });
+            void group.offsetWidth;
+            items.forEach(function (el) { el.classList.add("is-visible"); });
+          }
         });
       });
     });
