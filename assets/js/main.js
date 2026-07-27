@@ -486,10 +486,35 @@
     });
   }
 
+  /* ---------- Índice de páginas legales (scroll-spy) ---------- */
+  function initLegalToc() {
+    var tocLinks = Array.prototype.slice.call(document.querySelectorAll(".legal-toc a[href^='#']"));
+    var sections = Array.prototype.slice.call(document.querySelectorAll(".legal-section[id]"));
+    if (!tocLinks.length || !sections.length) return;
+
+    var setActive = function (id) {
+      tocLinks.forEach(function (link) {
+        link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+      });
+    };
+
+    if ("IntersectionObserver" in window) {
+      var tocObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, { rootMargin: "-112px 0px -70% 0px", threshold: 0 });
+      sections.forEach(function (section) { tocObserver.observe(section); });
+    }
+
+    setActive(sections[0].id);
+  }
+
   migrateOldConsent();
   initPrivacyBanner();
   initPrivacyModal();
   initPrivacyFAB();
+  initLegalToc();
 
   /* Exponer API de consentimiento globalmente */
   window.Infinae = window.Infinae || {};
