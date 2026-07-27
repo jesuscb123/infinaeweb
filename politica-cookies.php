@@ -18,7 +18,7 @@ $canonical = "https://infinaeconsulting.com/politica-cookies.php";
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body class="legal-page">
 
 <div class="skip-link"><a href="#contenido">Saltar al contenido</a></div>
 
@@ -79,7 +79,7 @@ $canonical = "https://infinaeconsulting.com/politica-cookies.php";
         </nav>
         <div class="legal-toc-cta">
           <p>¿Tienes dudas sobre tus datos?</p>
-          <a href="mailto:info@infinaeconsulting.com">Contáctanos →</a>
+          <a href="mailto:administracion@infinaeconsulting.com">Contáctanos →</a>
         </div>
       </aside>
 
@@ -218,9 +218,9 @@ $canonical = "https://infinaeconsulting.com/politica-cookies.php";
       <div class="footer-col">
         <h5>Contacto</h5>
         <ul>
-          <li><a href="tel:+34623456553">623 456 553</a></li>
-          <li><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></li>
-          <li>Avenida Chipiona, calle Crianza 15,<br>Jerez de la Frontera, CP 11408</li>
+          <li><a href="tel:+34657611291">657 61 12 91</a></li>
+          <li><a href="mailto:administracion@infinaeconsulting.com">administracion@infinaeconsulting.com</a></li>
+          <li>C/ General Prim 14,<br>CP 06007, Badajoz</li>
         </ul>
       </div>
       <div class="footer-col">

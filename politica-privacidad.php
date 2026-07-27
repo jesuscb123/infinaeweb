@@ -18,7 +18,7 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body class="legal-page">
 
 <div class="skip-link"><a href="#contenido">Saltar al contenido</a></div>
 
@@ -85,7 +85,7 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
         </nav>
         <div class="legal-toc-cta">
           <p>¿Tienes dudas sobre tus datos?</p>
-          <a href="mailto:info@infinaeconsulting.com">Contáctanos →</a>
+          <a href="mailto:administracion@infinaeconsulting.com">Contáctanos →</a>
         </div>
       </aside>
 
@@ -100,11 +100,12 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
               <table>
                 <tbody>
                   <tr><th scope="row">Responsable</th><td>Infinae Consulting</td></tr>
-                  <tr><th scope="row">NIF / CIF</th><td><span class="legal-pending">Pendiente de completar</span></td></tr>
-                  <tr><th scope="row">Domicilio</th><td>Avenida Chipiona, calle Crianza 15, CP 11408, Jerez de la Frontera</td></tr>
-                  <tr><th scope="row">Correo electrónico</th><td><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></td></tr>
-                  <tr><th scope="row">Teléfono de contacto</th><td><a href="tel:+34623456553">623 456 553</a></td></tr>
+                  <tr><th scope="row">CIF</th><td>B-56520844</td></tr>
+                  <tr><th scope="row">Domicilio</th><td>C/ General Prim 14, CP 06007, Badajoz</td></tr>
+                  <tr><th scope="row">Correo electrónico</th><td><a href="mailto:administracion@infinaeconsulting.com">administracion@infinaeconsulting.com</a></td></tr>
+                  <tr><th scope="row">Teléfono de contacto</th><td><a href="tel:+34657611291">657 61 12 91</a></td></tr>
                   <tr><th scope="row">Sitio web</th><td><a href="https://infinaeconsulting.com/">https://infinaeconsulting.com</a></td></tr>
+                  <tr><th scope="row">Administrador único</th><td>Manuel Guzmán Lobato (NIF 21422908-H)</td></tr>
                 </tbody>
               </table>
             </div>
@@ -195,7 +196,7 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
               <li>Solicitar la <strong>portabilidad</strong> de sus datos.</li>
               <li><strong>Revocar el consentimiento</strong> en cualquier momento, sin que ello afecte a la licitud del tratamiento previo.</li>
             </ul>
-            <p>El ejercicio de estos derechos debe realizarse directamente por la persona interesada, enviando su solicitud a <a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a>.</p>
+            <p>El ejercicio de estos derechos debe realizarse directamente por la persona interesada, enviando su solicitud a <a href="mailto:administracion@infinaeconsulting.com">administracion@infinaeconsulting.com</a>.</p>
             <p>Tiene derecho a presentar una reclamación ante la autoridad de control si considera que el tratamiento de sus datos personales infringe el RGPD. En España, la autoridad competente es la <strong>Agencia Española de Protección de Datos (AEPD)</strong>: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
           </section>
 
@@ -299,9 +300,9 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
       <div class="footer-col">
         <h5>Contacto</h5>
         <ul>
-          <li><a href="tel:+34623456553">623 456 553</a></li>
-          <li><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></li>
-          <li>Avenida Chipiona, calle Crianza 15,<br>Jerez de la Frontera, CP 11408</li>
+          <li><a href="tel:+34657611291">657 61 12 91</a></li>
+          <li><a href="mailto:administracion@infinaeconsulting.com">administracion@infinaeconsulting.com</a></li>
+          <li>C/ General Prim 14,<br>CP 06007, Badajoz</li>
         </ul>
       </div>
       <div class="footer-col">

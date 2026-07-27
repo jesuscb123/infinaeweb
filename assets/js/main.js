@@ -207,6 +207,70 @@
         goToStorySlide(target, target > storyCurrent ? 1 : -1);
       });
     });
+
+    /* ---------- Scroll guiado (una sola vez por carga): el scroll hacia abajo recorre
+       los estados de la sección antes de dejar avanzar a la siguiente. Reutiliza
+       goToStorySlide (misma función que las pestañas) y solo actúa mientras la
+       sección está completamente visible; en cuanto se muestra el último estado,
+       libera el scroll para siempre en esta carga de página. */
+    var storyScrollDone = false;
+    var STORY_VISIBLE_RATIO = 0.9; // activa cuando ~el 90% del alto visible posible de la sección está en pantalla
+    var STORY_STEP_LOCK_MS = 900; // cubre la transición (~800ms) + margen para que decaiga la inercia del trackpad
+
+    var isStoryFullyVisible = function () {
+      // Se compara contra lo máximo mostrable (min(alto de la sección, alto del viewport)) en vez de
+      // contra el alto total de la sección: si la sección es más alta que el viewport (como ocurre aquí
+      // con la imagen + los 3 pasos), nunca podría cubrir el 100% de su propio alto y el guard no
+      // llegaría a activarse nunca en portátiles/monitores normales.
+      var rect = storySlider.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var achievable = Math.min(rect.height, vh);
+      if (achievable <= 0) return false;
+      var visible = Math.min(rect.bottom, vh) - Math.max(rect.top, 0);
+      return (visible / achievable) >= STORY_VISIBLE_RATIO;
+    };
+
+    var storyWheelAttached = false;
+    var storyLockedUntil = 0;
+
+    var handleStoryWheel = function (e) {
+      if (storyScrollDone || e.deltaY <= 0 || e.ctrlKey) return; // solo hacia abajo; ctrlKey = pinch-zoom, no tocar
+      if (!isStoryFullyVisible()) return;
+
+      var isLast = storyCurrent >= storySlides.length - 1;
+      if (isLast) {
+        storyScrollDone = true;
+        detachStoryWheelGuard();
+        return; // deja pasar este scroll tal cual: continúa de forma nativa hacia la siguiente sección
+      }
+
+      e.preventDefault();
+      if (Date.now() < storyLockedUntil) return; // en transición o inercia reciente: absorbe sin repetir el avance
+      storyLockedUntil = Date.now() + STORY_STEP_LOCK_MS;
+      goToStorySlide(storyCurrent + 1, 1);
+    };
+
+    var attachStoryWheelGuard = function () {
+      if (storyWheelAttached || storyScrollDone) return;
+      storyWheelAttached = true;
+      window.addEventListener("wheel", handleStoryWheel, { passive: false });
+    };
+    var detachStoryWheelGuard = function () {
+      if (!storyWheelAttached) return;
+      storyWheelAttached = false;
+      window.removeEventListener("wheel", handleStoryWheel);
+    };
+
+    if ("IntersectionObserver" in window) {
+      var storyGuardObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (storyScrollDone) { storyGuardObserver.disconnect(); detachStoryWheelGuard(); return; }
+          if (entry.isIntersecting) attachStoryWheelGuard();
+          else detachStoryWheelGuard();
+        });
+      }, { threshold: 0 });
+      storyGuardObserver.observe(storySlider);
+    }
   }
 
   /* ---------- Tilt 3D delegado (galería, equipamiento, tarjetas de contacto) ---------- */
@@ -521,31 +585,126 @@
   window.Infinae.hasConsent = hasConsent;
 
   /* ---------- Pestañas de categoría (instalaciones): cambia el grupo de fotos visible ---------- */
-  var installationTabs = document.querySelectorAll("[data-installation-tab]");
+  var installationTabs = Array.prototype.slice.call(document.querySelectorAll("[data-installation-tab]"));
   var installationGroups = Array.prototype.slice.call(document.querySelectorAll("[data-installation-category]"));
   if (installationTabs.length) {
     var installationRevealSelector = ".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur";
+    var installationCategories = installationTabs.map(function (t) { return t.getAttribute("data-installation-tab"); });
+
+    var goToInstallationCategory = function (category) {
+      installationTabs.forEach(function (t) {
+        var isActive = t.getAttribute("data-installation-tab") === category;
+        t.classList.toggle("is-active", isActive);
+        t.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      installationGroups.forEach(function (group) {
+        var isActive = group.getAttribute("data-installation-category") === category;
+        group.classList.toggle("is-active", isActive);
+        if (isActive) {
+          // Reinicia y relanza la animación de entrada de las fotos cada vez que se muestra el grupo
+          var items = group.querySelectorAll(installationRevealSelector);
+          items.forEach(function (el) { el.classList.remove("is-visible"); });
+          void group.offsetWidth;
+          items.forEach(function (el) { el.classList.add("is-visible"); });
+        }
+      });
+      installationCurrentIndex = installationCategories.indexOf(category);
+    };
+
+    var initialInstallationTab = installationTabs.filter(function (t) { return t.classList.contains("is-active"); })[0] || installationTabs[0];
+    var installationCurrentIndex = Math.max(0, installationCategories.indexOf(initialInstallationTab.getAttribute("data-installation-tab")));
+
     installationTabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
-        var category = tab.getAttribute("data-installation-tab");
-        installationTabs.forEach(function (t) {
-          var isActive = t === tab;
-          t.classList.toggle("is-active", isActive);
-          t.setAttribute("aria-selected", isActive ? "true" : "false");
-        });
-        installationGroups.forEach(function (group) {
-          var isActive = group.getAttribute("data-installation-category") === category;
-          group.classList.toggle("is-active", isActive);
-          if (isActive) {
-            // Reinicia y relanza la animación de entrada de las fotos cada vez que se muestra el grupo
-            var items = group.querySelectorAll(installationRevealSelector);
-            items.forEach(function (el) { el.classList.remove("is-visible"); });
-            void group.offsetWidth;
-            items.forEach(function (el) { el.classList.add("is-visible"); });
-          }
-        });
+        goToInstallationCategory(tab.getAttribute("data-installation-tab"));
       });
     });
+
+    /* ---------- Scroll guiado (una sola vez por carga): el scroll hacia abajo recorre las
+       categorías (Zona de trabajo / Equipos informáticos / Baños) antes de dejar avanzar a
+       "Equipamiento". Reutiliza goToInstallationCategory (misma función que las pestañas).
+       El área "completamente visible" va desde la cabecera de la sección hasta el final de la
+       rejilla de fotos activa: no existe un contenedor único que envuelva solo pestañas+fotos
+       en el HTML (no se puede modificar el HTML), así que se calcula combinando ambos límites
+       en vez de depender de un solo elemento. */
+    var installationScrollDone = false;
+    var installationEngaged = false; // true en cuanto arranca el recorrido guiado; a partir de ahí no se
+                                      // vuelve a exigir el 90% en cada evento (con 3 estados hacen falta dos
+                                      // avances, y revalidar la visibilidad en cada tick es fràgil: un
+                                      // pequeño residuo de scroll entre medias podía dejarlo bloqueado en
+                                      // "Equipos informáticos" sin llegar nunca a "Baños")
+    var INSTALLATION_VISIBLE_RATIO = 0.9;
+    var INSTALLATION_STEP_LOCK_MS = 350; // sin animación que marque el ritmo, solo hace falta separar cada
+                                          // avance lo justo para que se perciba antes del siguiente
+
+    var installationHeaderEl = document.querySelector("#instalaciones .section-header");
+
+    var getActiveInstallationGroup = function () {
+      var category = installationCategories[installationCurrentIndex];
+      return installationGroups.filter(function (g) { return g.getAttribute("data-installation-category") === category; })[0] || installationGroups[0];
+    };
+
+    var isInstallationFullyVisible = function () {
+      if (!installationHeaderEl) return false;
+      var activeGroup = getActiveInstallationGroup();
+      var top = installationHeaderEl.getBoundingClientRect().top;
+      var bottom = activeGroup.getBoundingClientRect().bottom;
+      var vh = window.innerHeight;
+      var achievable = Math.min(bottom - top, vh);
+      if (achievable <= 0) return false;
+      var visible = Math.min(bottom, vh) - Math.max(top, 0);
+      return (visible / achievable) >= INSTALLATION_VISIBLE_RATIO;
+    };
+
+    var installationLockedUntil = 0;
+    var handleInstallationWheel = function (e) {
+      if (installationScrollDone || e.deltaY <= 0 || e.ctrlKey) return; // solo hacia abajo; ctrlKey = pinch-zoom, no tocar
+
+      if (!installationEngaged) {
+        if (!isInstallationFullyVisible()) return; // todavía no ha llegado: scroll nativo
+        installationEngaged = true;
+      }
+
+      var isLast = installationCurrentIndex >= installationCategories.length - 1;
+      if (isLast) {
+        installationScrollDone = true;
+        installationEngaged = false;
+        detachInstallationWheelGuard();
+        return; // deja pasar este scroll tal cual: continúa hacia "Equipamiento"
+      }
+
+      e.preventDefault();
+      if (Date.now() < installationLockedUntil) return; // categoría recién cambiada: absorbe sin repetir el avance
+      installationLockedUntil = Date.now() + INSTALLATION_STEP_LOCK_MS;
+      goToInstallationCategory(installationCategories[installationCurrentIndex + 1]);
+    };
+
+    var installationWheelAttached = false;
+    var attachInstallationWheelGuard = function () {
+      if (installationWheelAttached || installationScrollDone) return;
+      installationWheelAttached = true;
+      window.addEventListener("wheel", handleInstallationWheel, { passive: false });
+    };
+    var detachInstallationWheelGuard = function () {
+      if (!installationWheelAttached) return;
+      installationWheelAttached = false;
+      window.removeEventListener("wheel", handleInstallationWheel);
+    };
+
+    if ("IntersectionObserver" in window && installationHeaderEl) {
+      var installationGuardObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (installationScrollDone) { installationGuardObserver.disconnect(); detachInstallationWheelGuard(); return; }
+          if (entry.isIntersecting) {
+            attachInstallationWheelGuard();
+          } else {
+            installationEngaged = false; // salió de la zona sin terminar: al volver, que revalide desde cero
+            detachInstallationWheelGuard();
+          }
+        });
+      }, { threshold: 0 });
+      installationGuardObserver.observe(installationHeaderEl);
+    }
   }
 
   /* ---------- Tarjetas expandibles (equipamiento) ---------- */

@@ -18,7 +18,7 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body class="legal-page">
 
 <div class="skip-link"><a href="#contenido">Saltar al contenido</a></div>
 
@@ -81,7 +81,7 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
         </nav>
         <div class="legal-toc-cta">
           <p>¿Tienes dudas sobre este aviso legal?</p>
-          <a href="mailto:info@infinaeconsulting.com">Contáctanos →</a>
+          <a href="mailto:administracion@infinaeconsulting.com">Contáctanos →</a>
         </div>
       </aside>
 
@@ -95,17 +95,18 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
               <table>
                 <tbody>
                   <tr><th scope="row">Denominación</th><td>Infinae Consulting</td></tr>
-                  <tr><th scope="row">CIF / NIF</th><td><span class="legal-pending">Pendiente de completar</span></td></tr>
-                  <tr><th scope="row">Domicilio social</th><td>Avenida Chipiona, calle Crianza 15, CP 11408, Jerez de la Frontera</td></tr>
-                  <tr><th scope="row">Correo electrónico</th><td><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></td></tr>
-                  <tr><th scope="row">Teléfono</th><td><a href="tel:+34623456553">623 456 553</a></td></tr>
+                  <tr><th scope="row">CIF</th><td>B-56520844</td></tr>
+                  <tr><th scope="row">Domicilio social</th><td>C/ General Prim 14, CP 06007, Badajoz</td></tr>
+                  <tr><th scope="row">Correo electrónico</th><td><a href="mailto:administracion@infinaeconsulting.com">administracion@infinaeconsulting.com</a></td></tr>
+                  <tr><th scope="row">Teléfono</th><td><a href="tel:+34657611291">657 61 12 91</a></td></tr>
                   <tr><th scope="row">Sitio web</th><td><a href="https://infinaeconsulting.com/">https://infinaeconsulting.com</a></td></tr>
+                  <tr><th scope="row">Administrador único</th><td>Manuel Guzmán Lobato (NIF 21422908-H)</td></tr>
                 </tbody>
               </table>
             </div>
             <div class="legal-note">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/></svg>
-              <p>Pendiente de completar antes de publicar: CIF/NIF, forma jurídica y, si procede, datos de inscripción registral. Esta información no figuraba en el material aportado y debe incorporarla el titular.</p>
+              <p>Pendiente de completar antes de publicar, si procede: datos de inscripción en el Registro Mercantil. Esta información no figuraba en el material aportado y debe incorporarla el titular.</p>
             </div>
           </section>
 
@@ -202,9 +203,9 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
       <div class="footer-col">
         <h5>Contacto</h5>
         <ul>
-          <li><a href="tel:+34623456553">623 456 553</a></li>
-          <li><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></li>
-          <li>Avenida Chipiona, calle Crianza 15,<br>Jerez de la Frontera, CP 11408</li>
+          <li><a href="tel:+34657611291">657 61 12 91</a></li>
+          <li><a href="mailto:administracion@infinaeconsulting.com">administracion@infinaeconsulting.com</a></li>
+          <li>C/ General Prim 14,<br>CP 06007, Badajoz</li>
         </ul>
       </div>
       <div class="footer-col">
