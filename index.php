@@ -112,9 +112,13 @@ $canonical = "https://infinaeconsulting.com/";
         </div>
       </div>
       <div class="hero-mark reveal">
-        <div class="hero-mark-lockup">
-          <img src="assets/img/icon-navy.webp" alt="Isotipo de Infinae — dos eslabones entrelazados">
-          <span class="hero-mark-wordmark">INFINAE</span>
+        <div class="hero-mark-photo">
+          <img src="assets/img/agente-atencion-hero.jpg" alt="Agente de Infinae con auriculares atendiendo una llamada en el call center" width="1600" height="1600">
+          <span class="hero-mark-scrim" aria-hidden="true"></span>
+          <div class="hero-mark-logo" aria-hidden="true">
+            <img src="assets/img/icon-white.webp" alt="" class="hero-mark-logo-icon">
+            <span class="hero-mark-logo-text">INFINAE</span>
+          </div>
         </div>
         <span class="hero-mark-chip" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1Z"/><path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 1 1Z"/></svg>
