@@ -1,12 +1,16 @@
 <?php
 /**
  * Infinae — endpoint del formulario de contacto.
- * Recibe JSON desde fetch(), valida en servidor y envía el mensaje.
- * Nota de despliegue: mail() requiere un transporte de correo (sendmail/SMTP)
- * configurado en el servidor de producción; en entorno local sin ese
- * transporte, la validación funciona pero el envío devolverá error.
+ * Recibe JSON desde fetch(), valida en servidor y envía el mensaje por SMTP
+ * (PHPMailer). La configuración del transporte vive en variables de entorno
+ * (.env en local, variables reales del servidor en producción) — ver .env.example.
  */
 declare(strict_types=1);
+
+require __DIR__ . '/bootstrap.php';
+
+use PHPMailer\PHPMailer\Exception as PHPMailerException;
+use PHPMailer\PHPMailer\PHPMailer;
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -25,10 +29,11 @@ if (!is_array($data)) {
     exit;
 }
 
-$nombre  = trim((string)($data['nombre'] ?? ''));
-$empresa = trim((string)($data['empresa'] ?? ''));
-$email   = trim((string)($data['email'] ?? ''));
-$mensaje = trim((string)($data['mensaje'] ?? ''));
+$nombre     = trim((string)($data['nombre'] ?? ''));
+$empresa    = trim((string)($data['empresa'] ?? ''));
+$email      = trim((string)($data['email'] ?? ''));
+$mensaje    = trim((string)($data['mensaje'] ?? ''));
+$privacidad = (bool)($data['privacidad'] ?? false);
 
 $errors = [];
 if ($nombre === '' || mb_strlen($nombre) > 120) {
@@ -43,6 +48,9 @@ if ($mensaje === '' || mb_strlen($mensaje) > 4000) {
 if (mb_strlen($empresa) > 150) {
     $errors[] = 'empresa';
 }
+if (!$privacidad) {
+    $errors[] = 'privacidad';
+}
 
 if (!empty($errors)) {
     http_response_code(422);
@@ -53,28 +61,50 @@ if (!empty($errors)) {
     exit;
 }
 
-$to      = 'info@infinaeconsulting.com';
-$subject = 'Nuevo mensaje de contacto — infinaeconsulting.com';
-$body    = "Nombre: {$nombre}\n"
-         . 'Empresa: ' . ($empresa !== '' ? $empresa : '—') . "\n"
-         . "Email: {$email}\n\n"
-         . "Mensaje:\n{$mensaje}\n";
-
-$headers = [
-    'Content-Type: text/plain; charset=UTF-8',
-    'From: web@infinaeconsulting.com',
-    'Reply-To: ' . $email,
-];
-
-$sent = @mail($to, $subject, $body, implode("\r\n", $headers));
-
-if ($sent) {
-    echo json_encode(['success' => true]);
-    exit;
+$smtpConfigKeys = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'SMTP_FROM_EMAIL', 'CONTACT_TO_EMAIL'];
+foreach ($smtpConfigKeys as $key) {
+    if (getenv($key) === false || getenv($key) === '') {
+        error_log("contacto.php: falta la variable de entorno {$key} (revisa .env)");
+        http_response_code(500);
+        echo json_encode([
+            'success' => false,
+            'message' => 'El formulario no está disponible en este momento. Escríbenos directamente a info@infinaeconsulting.com.',
+        ]);
+        exit;
+    }
 }
 
-http_response_code(500);
-echo json_encode([
-    'success' => false,
-    'message' => 'No se pudo enviar el mensaje. Escríbenos directamente a info@infinaeconsulting.com.',
-]);
+$mail = new PHPMailer(true);
+
+try {
+    $mail->isSMTP();
+    $mail->Host       = getenv('SMTP_HOST');
+    $mail->Port       = (int)getenv('SMTP_PORT');
+    $mail->SMTPAuth   = true;
+    $mail->Username   = getenv('SMTP_USER');
+    $mail->Password   = getenv('SMTP_PASS');
+    $mail->SMTPSecure = getenv('SMTP_SECURE') === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->CharSet    = PHPMailer::CHARSET_UTF8;
+
+    $mail->setFrom(getenv('SMTP_FROM_EMAIL'), getenv('SMTP_FROM_NAME') ?: 'Infinae Web');
+    $mail->addAddress(getenv('CONTACT_TO_EMAIL'), getenv('CONTACT_TO_NAME') ?: 'Infinae');
+    $mail->addReplyTo($email, $nombre);
+
+    $mail->isHTML(false);
+    $mail->Subject = 'Nuevo mensaje de contacto — infinaeconsulting.com';
+    $mail->Body    = "Nombre: {$nombre}\n"
+                   . 'Empresa: ' . ($empresa !== '' ? $empresa : '—') . "\n"
+                   . "Email: {$email}\n\n"
+                   . "Mensaje:\n{$mensaje}\n";
+
+    $mail->send();
+
+    echo json_encode(['success' => true]);
+} catch (PHPMailerException $e) {
+    error_log('contacto.php: fallo al enviar por SMTP — ' . $mail->ErrorInfo);
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'No se pudo enviar el mensaje. Escríbenos directamente a info@infinaeconsulting.com.',
+    ]);
+}
