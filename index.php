@@ -22,12 +22,11 @@ $canonical = "https://infinaeconsulting.com/";
 <meta property="og:title" content="<?php echo $pageTitle; ?>">
 <meta property="og:description" content="<?php echo $pageDescription; ?>">
 <meta property="og:url" content="<?php echo $canonical; ?>">
-<meta property="og:image" content="<?php echo $canonical; ?>assets/img/favicon.png">
+<meta property="og:image" content="<?php echo $canonical; ?>assets/img/favicon.webp">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary">
 
-<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon.png">
+<?php include __DIR__ . '/includes/favicon.php'; ?>
 
 <!-- Fuentes propias precargadas -->
 <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -43,7 +42,7 @@ $canonical = "https://infinaeconsulting.com/";
   "name": "Infinae",
   "legalName": "Infinae Consulting",
   "url": "https://infinaeconsulting.com/",
-  "image": "https://infinaeconsulting.com/assets/img/favicon.png",
+  "image": "https://infinaeconsulting.com/assets/img/favicon.webp",
   "telephone": "+34623456553",
   "email": "info@infinaeconsulting.com",
   "address": {
@@ -64,27 +63,7 @@ $canonical = "https://infinaeconsulting.com/";
 
 <div class="skip-link"><a href="#contenido">Saltar al contenido</a></div>
 
-<header class="navbar-infinae" id="siteNavbar">
-  <div class="container-custom">
-    <a href="#top" class="nav-brand">
-      <img src="assets/img/icon-navy.webp" alt="" width="51" height="24">
-      INFINAE
-    </a>
-    <nav aria-label="Navegación principal">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#quienes-somos">Quiénes somos</a></li>
-        <li><a href="#que-hacemos">Qué hacemos</a></li>
-        <li><a href="#calidad">Compromiso con la calidad</a></li>
-        <li><a href="#instalaciones">Instalaciones</a></li>
-        <li><a href="#atencion-cliente">Atención al cliente</a></li>
-        <li><a href="#contacto" class="btn-infinae btn-primary-gold" style="padding:.55rem 1.1rem;">Hablemos</a></li>
-      </ul>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+<?php include __DIR__ . '/includes/nav.php'; ?>
 
 <main id="contenido">
   <span id="top"></span>
@@ -113,7 +92,7 @@ $canonical = "https://infinaeconsulting.com/";
       </div>
       <div class="hero-mark reveal">
         <div class="hero-mark-photo">
-          <img src="assets/img/agente-atencion-hero.jpg" alt="Agente de Infinae con auriculares atendiendo una llamada en el call center" width="1600" height="1600">
+          <img src="assets/img/agente-atencion-hero.webp" alt="Agente de Infinae con auriculares atendiendo una llamada en el call center" width="1600" height="1600">
           <span class="hero-mark-scrim" aria-hidden="true"></span>
           <div class="hero-mark-logo" aria-hidden="true">
             <img src="assets/img/icon-white.webp" alt="" class="hero-mark-logo-icon">
@@ -180,7 +159,7 @@ $canonical = "https://infinaeconsulting.com/";
         <div class="col-lg-5 order-lg-1 reveal-left">
           <div class="about-media" data-tilt-group>
             <div class="about-media-tilt" data-tilt>
-              <img class="reveal-blur" src="assets/img/team-wide.jpg" alt="Equipo de Infinae en las oficinas de Jerez" loading="lazy" width="1408" height="1600">
+              <img class="reveal-blur" src="assets/img/team-wide.webp" alt="Equipo de Infinae en las oficinas de Jerez" loading="lazy" width="1408" height="1600">
             </div>
             <span class="about-media-chip" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 5 18.5V20"/><circle cx="9.5" cy="8" r="3.2"/><path d="M16.5 8.3a3 3 0 1 1 1.9 5.4"/><path d="M19 20v-1.5a3 3 0 0 0-1.7-2.7"/></svg>
@@ -251,7 +230,7 @@ $canonical = "https://infinaeconsulting.com/";
 
           <div class="story-act-media reveal-right">
             <div class="story-act-photo">
-              <img src="assets/img/agent-portrait.jpg" alt="Agente de Infinae en plena llamada" loading="lazy" width="1200" height="1504">
+              <img src="assets/img/agent-portrait.webp" alt="Agente de Infinae en plena llamada" loading="lazy" width="1200" height="1504">
               <div class="story-act-photo-overlay">
                 <span class="story-act-photo-eyebrow">Cada llamada</span>
                 <span class="story-act-photo-title">es una oportunidad</span>
@@ -267,7 +246,7 @@ $canonical = "https://infinaeconsulting.com/";
         <div class="story-act-grid">
           <div class="story-act-media reveal-left">
             <div class="story-act-photo">
-              <img src="assets/img/headset.jpg" alt="Agente de Infinae siguiendo el guion de llamada con diadema profesional" loading="lazy" width="1008" height="1200">
+              <img src="assets/img/headset.webp" alt="Agente de Infinae siguiendo el guion de llamada con diadema profesional" loading="lazy" width="1008" height="1200">
               <div class="story-act-photo-overlay">
                 <span class="story-act-photo-eyebrow">Cada equipo</span>
                 <span class="story-act-photo-title">sigue un método</span>
@@ -326,7 +305,7 @@ $canonical = "https://infinaeconsulting.com/";
       </div>
       <div class="quality-grid">
         <article class="quality-card reveal-scale stagger-1">
-          <img class="quality-card-img" src="assets/img/supervision.jpg" alt="Analizamos cada llamada" loading="lazy" width="1408" height="1008">
+          <img class="quality-card-img" src="assets/img/supervision.webp" alt="Analizamos cada llamada" loading="lazy" width="1408" height="1008">
           <span class="quality-card-scrim" aria-hidden="true"></span>
           <span class="quality-card-tag">
             <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg></span>
@@ -338,7 +317,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </article>
         <article class="quality-card reveal-scale stagger-3">
-          <img class="quality-card-img" src="assets/img/team-wide.jpg" alt="Acompañamos en tiempo real" loading="lazy" width="1408" height="1600">
+          <img class="quality-card-img" src="assets/img/team-wide.webp" alt="Acompañamos en tiempo real" loading="lazy" width="1408" height="1600">
           <span class="quality-card-scrim" aria-hidden="true"></span>
           <span class="quality-card-tag">
             <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
@@ -350,7 +329,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </article>
         <article class="quality-card reveal-scale stagger-5">
-          <img class="quality-card-img" src="assets/img/training.jpg" alt="Equipos que evolucionan" loading="lazy" width="1408" height="1008">
+          <img class="quality-card-img" src="assets/img/training.webp" alt="Equipos que evolucionan" loading="lazy" width="1408" height="1008">
           <span class="quality-card-scrim" aria-hidden="true"></span>
           <span class="quality-card-tag">
             <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span>
@@ -664,228 +643,9 @@ $canonical = "https://infinaeconsulting.com/";
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container-custom">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <img src="assets/img/icon-white.webp" alt="" width="51" height="24">
-          <span>INFINAE</span>
-        </div>
-        <p style="font-size:.88rem;max-width:32ch;">Call center especializado en llamadas salientes B2B, con sede en Jerez de la Frontera.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Navegación</h5>
-        <ul>
-          <li><a href="#quienes-somos">Quiénes somos</a></li>
-          <li><a href="#que-hacemos">Qué hacemos</a></li>
-          <li><a href="#calidad">Compromiso con la calidad</a></li>
-          <li><a href="#instalaciones">Instalaciones</a></li>
-          <li><a href="#atencion-cliente">Atención al cliente</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contacto</h5>
-        <ul>
-          <li><a href="tel:+34623456553">623 456 553</a></li>
-          <li><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></li>
-          <li>Avenida Chipiona, calle Crianza 15,<br>Jerez de la Frontera, CP 11408</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Legal</h5>
-        <ul>
-          <li><a href="aviso-legal.php">Aviso legal</a></li>
-          <li><a href="politica-privacidad.php">Política de privacidad</a></li>
-          <li><a href="politica-cookies.php">Política de cookies</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <?php echo date("Y"); ?> Infinae Consulting. Todos los derechos reservados.</span>
-      <div class="social-links">
-        <a href="https://www.instagram.com/infinaeconsulting" target="_blank" rel="noopener" aria-label="Instagram de Infinae">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61566405762113" target="_blank" rel="noopener" aria-label="Facebook de Infinae">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 4h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3Z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+<?php include __DIR__ . '/includes/footer.php'; ?>
 
-<!-- Centro de Privacidad: botón flotante + banner de cookies + modal -->
-<button id="privacyFab" type="button" class="privacy-fab" aria-label="Abrir Centro de Privacidad" aria-haspopup="dialog">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
-</button>
-
-<div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" aria-describedby="cookieBannerDesc" hidden>
-  <div class="container-custom cookie-banner-inner">
-    <div class="cookie-banner-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
-    </div>
-    <div class="cookie-banner-content">
-      <p class="cookie-banner-title">Usamos cookies</p>
-      <p class="cookie-banner-text" id="cookieBannerDesc">Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar el uso del sitio y ofrecerte contenido personalizado. Consulta nuestra <a href="politica-cookies.php">política de cookies</a> y <a href="politica-privacidad.php">política de privacidad</a>.</p>
-    </div>
-    <div class="cookie-banner-actions" role="group" aria-label="Opciones de consentimiento de cookies">
-      <button type="button" id="cookieReject" class="cookie-banner-btn cookie-banner-btn--ghost">Rechazar</button>
-      <button type="button" id="cookieConfigure" class="cookie-banner-btn cookie-banner-btn--outline" data-bs-toggle="modal" data-bs-target="#privacyModal" aria-haspopup="dialog">Configurar</button>
-      <button type="button" id="cookieAccept" class="cookie-banner-btn cookie-banner-btn--primary">Aceptar todas</button>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalTitle" aria-modal="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg privacy-modal-dialog">
-    <div class="modal-content privacy-modal-content">
-
-      <div class="modal-header privacy-modal-header">
-        <div class="privacy-modal-header-inner">
-          <div class="privacy-modal-header-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
-          </div>
-          <div>
-            <h2 class="privacy-modal-title" id="privacyModalTitle">Centro de Privacidad</h2>
-            <p class="privacy-modal-subtitle">Controla cómo usamos tus datos y personaliza tu experiencia</p>
-          </div>
-        </div>
-        <button type="button" class="privacy-modal-close" data-bs-dismiss="modal" aria-label="Cerrar Centro de Privacidad">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </div>
-
-      <div class="modal-body privacy-modal-body">
-        <div class="privacy-modal-categories" role="list" aria-label="Categorías de cookies">
-
-          <div class="privacy-cat privacy-cat--required" role="listitem">
-            <div class="privacy-cat-header">
-              <div class="privacy-cat-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              </div>
-              <div class="privacy-cat-info">
-                <h3 class="privacy-cat-title">Cookies necesarias</h3>
-                <p class="privacy-cat-desc">Esenciales para el funcionamiento del sitio. No pueden desactivarse.</p>
-              </div>
-              <div class="privacy-cat-toggle">
-                <div class="form-check form-switch mb-0 d-flex align-items-center gap-2">
-                  <input class="form-check-input privacy-switch" type="checkbox" id="cookie-necessary" checked disabled aria-label="Cookies necesarias, siempre activas">
-                  <span class="privacy-always-on" aria-hidden="true">Siempre activo</span>
-                </div>
-              </div>
-            </div>
-            <p class="privacy-cat-detail">Incluyen el registro de tu consentimiento y las preferencias básicas de navegación. Sin ellas el sitio no puede funcionar correctamente.</p>
-          </div>
-
-          <div class="privacy-cat" role="listitem">
-            <div class="privacy-cat-header">
-              <div class="privacy-cat-icon privacy-cat-icon--analytics" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg>
-              </div>
-              <div class="privacy-cat-info">
-                <h3 class="privacy-cat-title">Cookies analíticas</h3>
-                <p class="privacy-cat-desc">Nos ayudan a entender cómo interactúan los visitantes con el sitio.</p>
-              </div>
-              <div class="privacy-cat-toggle">
-                <div class="form-check form-switch mb-0">
-                  <input class="form-check-input privacy-switch" type="checkbox" id="cookie-analytics" name="cookie-analytics" role="switch" aria-label="Activar cookies analíticas" aria-describedby="desc-analytics">
-                </div>
-              </div>
-            </div>
-            <p class="privacy-cat-detail" id="desc-analytics">Nos permiten medir el número de visitantes, las páginas más visitadas y el origen del tráfico. Todos los datos son anónimos y agregados.</p>
-          </div>
-
-          <div class="privacy-cat" role="listitem">
-            <div class="privacy-cat-header">
-              <div class="privacy-cat-icon privacy-cat-icon--preferences" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="7" x2="19" y2="7"/><circle cx="15" cy="7" r="2"/><line x1="5" y1="12" x2="19" y2="12"/><circle cx="9" cy="12" r="2"/><line x1="5" y1="17" x2="19" y2="17"/><circle cx="14" cy="17" r="2"/></svg>
-              </div>
-              <div class="privacy-cat-info">
-                <h3 class="privacy-cat-title">Cookies de preferencias</h3>
-                <p class="privacy-cat-desc">Recuerdan tus elecciones para personalizar tu experiencia.</p>
-              </div>
-              <div class="privacy-cat-toggle">
-                <div class="form-check form-switch mb-0">
-                  <input class="form-check-input privacy-switch" type="checkbox" id="cookie-preferences" name="cookie-preferences" role="switch" aria-label="Activar cookies de preferencias" aria-describedby="desc-preferences">
-                </div>
-              </div>
-            </div>
-            <p class="privacy-cat-detail" id="desc-preferences">Guardan configuraciones como el idioma o la disposición de pantalla para que no tengas que ajustarlas en cada visita.</p>
-          </div>
-
-          <div class="privacy-cat" role="listitem">
-            <div class="privacy-cat-header">
-              <div class="privacy-cat-icon privacy-cat-icon--marketing" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4a1 1 0 0 0 1 1h2l7 4V5L6 9H4a1 1 0 0 0-1 1Z"/><path d="M17 9a3 3 0 0 1 0 6"/><path d="M6 15v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-3"/></svg>
-              </div>
-              <div class="privacy-cat-info">
-                <h3 class="privacy-cat-title">Cookies de marketing</h3>
-                <p class="privacy-cat-desc">Permiten mostrar publicidad relevante según tus intereses.</p>
-              </div>
-              <div class="privacy-cat-toggle">
-                <div class="form-check form-switch mb-0">
-                  <input class="form-check-input privacy-switch" type="checkbox" id="cookie-marketing" name="cookie-marketing" role="switch" aria-label="Activar cookies de marketing" aria-describedby="desc-marketing">
-                </div>
-              </div>
-            </div>
-            <p class="privacy-cat-detail" id="desc-marketing">Se utilizarían para medir la eficacia de campañas y mostrar anuncios personalizados en otras webs.</p>
-          </div>
-
-        </div>
-
-        <div class="privacy-modal-legal">
-          <h3 class="privacy-modal-legal-title">Información legal</h3>
-          <div class="row g-3">
-            <div class="col-sm-4">
-              <a href="politica-privacidad.php" class="privacy-legal-card">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7Z"/><path d="M14 3v4h4"/><path d="M9.5 12.5l1.8 1.8L15 10.5"/></svg>
-                <span>Política de Privacidad</span>
-                <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-            <div class="col-sm-4">
-              <a href="politica-cookies.php" class="privacy-legal-card">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
-                <span>Política de Cookies</span>
-                <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-            <div class="col-sm-4">
-              <a href="aviso-legal.php" class="privacy-legal-card">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6 4 4"/><path d="m3 21 7-7"/><path d="m6 13 5 5"/><path d="M10.5 9.5 15 5l4 4-4.5 4.5Z"/></svg>
-                <span>Aviso Legal</span>
-                <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer privacy-modal-footer">
-        <button type="button" id="privacyReject" class="privacy-footer-btn privacy-footer-btn--reject">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m5.5 5.5 13 13"/></svg>
-          Rechazar todas
-        </button>
-        <div class="privacy-modal-footer-right">
-          <button type="button" id="privacySave" class="privacy-footer-btn privacy-footer-btn--save">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11l3 3v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M8 4v5h8V4"/><path d="M8 14h8v6H8Z"/></svg>
-            Guardar preferencias
-          </button>
-          <button type="button" id="privacyAccept" class="privacy-footer-btn privacy-footer-btn--accept">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5"/></svg>
-            Aceptar todas
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
+<?php include __DIR__ . '/includes/privacy-widget.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js" defer></script>

@@ -2,15 +2,14 @@
 /**
  * Infinae — endpoint del formulario de contacto.
  * Recibe JSON desde fetch(), valida en servidor y envía el mensaje por SMTP
- * (PHPMailer). La configuración del transporte vive en variables de entorno
- * (.env en local, variables reales del servidor en producción) — ver .env.example.
+ * (cliente propio en api/smtp.php, sin dependencias externas). La configuración
+ * del transporte vive en variables de entorno (.env en local, variables reales
+ * del servidor en producción) — ver .env.example.
  */
 declare(strict_types=1);
 
 require __DIR__ . '/bootstrap.php';
-
-use PHPMailer\PHPMailer\Exception as PHPMailerException;
-use PHPMailer\PHPMailer\PHPMailer;
+require __DIR__ . '/smtp.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -74,34 +73,35 @@ foreach ($smtpConfigKeys as $key) {
     }
 }
 
-$mail = new PHPMailer(true);
+$fromEmail = (string) getenv('SMTP_FROM_EMAIL');
+$fromName  = getenv('SMTP_FROM_NAME') ?: 'Infinae Web';
+$toEmail   = (string) getenv('CONTACT_TO_EMAIL');
+$toName    = getenv('CONTACT_TO_NAME') ?: 'Infinae';
 
-try {
-    $mail->isSMTP();
-    $mail->Host       = getenv('SMTP_HOST');
-    $mail->Port       = (int)getenv('SMTP_PORT');
-    $mail->SMTPAuth   = true;
-    $mail->Username   = getenv('SMTP_USER');
-    $mail->Password   = getenv('SMTP_PASS');
-    $mail->SMTPSecure = getenv('SMTP_SECURE') === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->CharSet    = PHPMailer::CHARSET_UTF8;
+$asunto     = 'Nuevo mensaje de contacto — infinaeconsulting.com';
+$asuntoMime = '=?UTF-8?B?' . base64_encode($asunto) . '?=';
 
-    $mail->setFrom(getenv('SMTP_FROM_EMAIL'), getenv('SMTP_FROM_NAME') ?: 'Infinae Web');
-    $mail->addAddress(getenv('CONTACT_TO_EMAIL'), getenv('CONTACT_TO_NAME') ?: 'Infinae');
-    $mail->addReplyTo($email, $nombre);
+$cuerpo = "Nombre: {$nombre}\n"
+        . 'Empresa: ' . ($empresa !== '' ? $empresa : '—') . "\n"
+        . "Email: {$email}\n\n"
+        . "Mensaje:\n{$mensaje}\n";
 
-    $mail->isHTML(false);
-    $mail->Subject = 'Nuevo mensaje de contacto — infinaeconsulting.com';
-    $mail->Body    = "Nombre: {$nombre}\n"
-                   . 'Empresa: ' . ($empresa !== '' ? $empresa : '—') . "\n"
-                   . "Email: {$email}\n\n"
-                   . "Mensaje:\n{$mensaje}\n";
+$headers = [
+    'From: ' . infinae_smtp_header_safe($fromName) . ' <' . $fromEmail . '>',
+    'To: ' . infinae_smtp_header_safe($toName) . ' <' . $toEmail . '>',
+    'Reply-To: ' . infinae_smtp_header_safe($nombre) . ' <' . $email . '>',
+    'Subject: ' . $asuntoMime,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8',
+    'X-Mailer: Infinae-SMTP/1.0',
+];
 
-    $mail->send();
+$enviado = infinae_smtp_send($toEmail, $headers, $cuerpo);
 
+if ($enviado) {
     echo json_encode(['success' => true]);
-} catch (PHPMailerException $e) {
-    error_log('contacto.php: fallo al enviar por SMTP — ' . $mail->ErrorInfo);
+} else {
+    error_log('contacto.php: fallo al enviar por SMTP');
     http_response_code(500);
     echo json_encode([
         'success' => false,

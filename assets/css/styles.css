@@ -1978,9 +1978,9 @@ body.nav-open .cookie-banner { display: none; }
   -webkit-mask-image: linear-gradient(100deg, transparent 0%, transparent 34%, rgba(0,0,0,.85) 68%, #000 100%);
   pointer-events: none;
 }
-.legal-hero-bg--aviso-legal { background-image: url('../img/hero-aviso-legal.png'); }
-.legal-hero-bg--privacidad  { background-image: url('../img/hero-privacidad.png'); }
-.legal-hero-bg--cookies     { background-image: url('../img/hero-cookies.png'); }
+.legal-hero-bg--aviso-legal { background-image: url('../img/hero-aviso-legal.webp'); }
+.legal-hero-bg--privacidad  { background-image: url('../img/hero-privacidad.webp'); }
+.legal-hero-bg--cookies     { background-image: url('../img/hero-cookies.webp'); }
 @media (max-width: 767.98px) {
   .legal-hero-bg {
     opacity: .45;

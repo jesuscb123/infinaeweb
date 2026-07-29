@@ -620,6 +620,30 @@
       });
     });
 
+    /* ---------- Scroll sobre las fotos: con el ratón encima de las imágenes, la rueda recorre
+       las categorías (Zona de trabajo / Equipos informáticos / Baños) en ambos sentidos. Al
+       llegar al primer/último grupo deja pasar el scroll nativo de la página. stopPropagation
+       evita que el mismo evento dispare también el guiado de scroll de página de más abajo. */
+    var installationHoverLockedUntil = 0;
+    var INSTALLATION_HOVER_LOCK_MS = 350;
+    var handleInstallationPhotosWheel = function (e) {
+      if (e.ctrlKey) return; // pinch-zoom, no tocar
+      var goingDown = e.deltaY > 0;
+      var goingUp = e.deltaY < 0;
+      if (!goingDown && !goingUp) return;
+      if (goingDown && installationCurrentIndex >= installationCategories.length - 1) return;
+      if (goingUp && installationCurrentIndex <= 0) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+      if (Date.now() < installationHoverLockedUntil) return;
+      installationHoverLockedUntil = Date.now() + INSTALLATION_HOVER_LOCK_MS;
+      goToInstallationCategory(installationCategories[installationCurrentIndex + (goingDown ? 1 : -1)]);
+    };
+    installationGroups.forEach(function (group) {
+      group.addEventListener("wheel", handleInstallationPhotosWheel, { passive: false });
+    });
+
     /* ---------- Scroll guiado (una sola vez por carga): el scroll hacia abajo recorre las
        categorías (Zona de trabajo / Equipos informáticos / Baños) antes de dejar avanzar a
        "Equipamiento". Reutiliza goToInstallationCategory (misma función que las pestañas).
@@ -711,14 +735,35 @@
   var expandCardsList = document.querySelector("[data-expand-cards]");
   if (expandCardsList) {
     var expandCards = Array.prototype.slice.call(expandCardsList.querySelectorAll("[data-expand-card]"));
+    var expandCurrentIndex = Math.max(0, expandCards.map(function (c) { return c.classList.contains("is-active"); }).indexOf(true));
     var setActiveExpandCard = function (card) {
       expandCards.forEach(function (c) { c.classList.toggle("is-active", c === card); });
+      expandCurrentIndex = expandCards.indexOf(card);
     };
     expandCards.forEach(function (card) {
       card.addEventListener("mouseenter", function () { setActiveExpandCard(card); });
       card.addEventListener("focus", function () { setActiveExpandCard(card); });
       card.addEventListener("click", function () { setActiveExpandCard(card); });
     });
+
+    /* ---------- Con el ratón encima de una tarjeta, la rueda recorre las tarjetas en ambos
+       sentidos (misma expansión que el hover). En el primer/último elemento deja pasar el
+       scroll nativo de la página. ---------- */
+    var expandWheelLockedUntil = 0;
+    var EXPAND_WHEEL_LOCK_MS = 350;
+    expandCardsList.addEventListener("wheel", function (e) {
+      if (e.ctrlKey) return; // pinch-zoom, no tocar
+      var goingDown = e.deltaY > 0;
+      var goingUp = e.deltaY < 0;
+      if (!goingDown && !goingUp) return;
+      if (goingDown && expandCurrentIndex >= expandCards.length - 1) return;
+      if (goingUp && expandCurrentIndex <= 0) return;
+
+      e.preventDefault();
+      if (Date.now() < expandWheelLockedUntil) return;
+      expandWheelLockedUntil = Date.now() + EXPAND_WHEEL_LOCK_MS;
+      setActiveExpandCard(expandCards[expandCurrentIndex + (goingDown ? 1 : -1)]);
+    }, { passive: false });
   }
 
   /* ---------- Pasos con imagen (atención al cliente) ---------- */

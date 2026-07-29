@@ -1,12 +1,10 @@
 <?php
 /**
- * Arranque común de las APIs: autoload de Composer + variables de entorno.
+ * Arranque común de las APIs: carga de variables de entorno.
  * Las variables ya definidas a nivel de servidor (getenv) tienen prioridad
  * sobre las del archivo .env, que solo cubre el hueco en desarrollo local.
  */
 declare(strict_types=1);
-
-require __DIR__ . '/../vendor/autoload.php';
 
 function infinae_load_env(string $path): void
 {
