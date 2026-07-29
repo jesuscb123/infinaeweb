@@ -766,6 +766,19 @@
     }, { passive: false });
   }
 
+  /* ---------- Píldoras de habilidades (quiénes somos) ---------- */
+  var aboutSkills = document.querySelector(".about-skills");
+  if (aboutSkills) {
+    var skillItems = Array.prototype.slice.call(aboutSkills.querySelectorAll("li"));
+    var skillCurrent = 0;
+    skillItems.forEach(function (item, i) { item.classList.toggle("is-active", i === 0); });
+    window.setInterval(function () {
+      skillItems[skillCurrent].classList.remove("is-active");
+      skillCurrent = (skillCurrent + 1) % skillItems.length;
+      skillItems[skillCurrent].classList.add("is-active");
+    }, 2200);
+  }
+
   /* ---------- Pasos con imagen (atención al cliente) ---------- */
   var featureSteps = document.querySelector("[data-feature-steps]");
   if (featureSteps) {

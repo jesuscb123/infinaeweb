@@ -497,7 +497,7 @@ $canonical = "https://infinaeconsulting.com/";
       </div>
       <div class="feature-steps" data-feature-steps>
         <div class="feature-list">
-          <div class="feature-item is-active is-done reveal-left" data-feature-item data-feature-index="0">
+          <div class="feature-item is-active is-done" data-feature-item data-feature-index="0">
             <span class="feature-badge" aria-hidden="true">
               <span class="feature-badge-num">1</span>
               <svg class="feature-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
@@ -573,21 +573,23 @@ $canonical = "https://infinaeconsulting.com/";
           <p class="lede">¿Quieres saber cómo podemos ayudar a tu empresa? Escríbenos o llámanos y te contamos.</p>
 
           <div class="contact-info-grid" data-tilt-group>
-            <div class="contact-info-item reveal-scale stagger-1" data-tilt>
+            <div class="contact-info-item contact-info-item--wide reveal-scale stagger-1" data-tilt>
               <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></div>
               <div><h4>Dirección</h4><p>Avenida Chipiona, calle Crianza 15<br>Jerez de la Frontera, CP 11408</p></div>
             </div>
-            <div class="contact-info-item reveal-scale stagger-2" data-tilt>
-              <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z"/></svg></div>
-              <div><h4>Teléfono</h4><p><a href="tel:+34623456553">623 456 553</a></p></div>
-            </div>
-            <div class="contact-info-item reveal-scale stagger-3" data-tilt>
-              <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></div>
-              <div><h4>Email</h4><p><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></p></div>
-            </div>
-            <div class="contact-info-item reveal-scale stagger-4" data-tilt>
-              <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1Z"/><path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 1 1Z"/></svg></div>
-              <div><h4>Horario</h4><p>L–V · 9:00 – 18:00</p></div>
+            <div class="contact-info-row">
+              <div class="contact-info-item reveal-scale stagger-2" data-tilt>
+                <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z"/></svg></div>
+                <div><h4>Teléfono</h4><p><a href="tel:+34623456553">623 456 553</a></p></div>
+              </div>
+              <div class="contact-info-item reveal-scale stagger-3" data-tilt>
+                <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1Z"/><path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 1 1Z"/></svg></div>
+                <div><h4>Horario</h4><p>L–V · 9:00 – 18:00</p></div>
+              </div>
+              <div class="contact-info-item contact-info-item--wide reveal-scale stagger-4" data-tilt>
+                <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></div>
+                <div><h4>Email</h4><p><a href="mailto:info@infinaeconsulting.com">info@infinaeconsulting.com</a></p></div>
+              </div>
             </div>
           </div>
           <div class="contact-map reveal-scale stagger-5">

@@ -1,0 +1,11 @@
+# Bloquea el acceso HTTP directo a archivos de configuración sensibles.
+# No afecta a la lectura interna que hace PHP (file()/require), solo al navegador.
+<FilesMatch "^\.env">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
