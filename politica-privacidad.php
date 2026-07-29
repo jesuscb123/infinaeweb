@@ -48,6 +48,7 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
 
   <!-- CABECERA -->
   <section class="legal-hero">
+    <div class="legal-hero-bg legal-hero-bg--privacidad" aria-hidden="true"></div>
     <div class="container-custom">
       <div class="legal-hero-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>

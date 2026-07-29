@@ -48,6 +48,7 @@ $canonical = "https://infinaeconsulting.com/politica-cookies.php";
 
   <!-- CABECERA -->
   <section class="legal-hero">
+    <div class="legal-hero-bg legal-hero-bg--cookies" aria-hidden="true"></div>
     <div class="container-custom">
       <div class="legal-hero-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="15" r="1" fill="currentColor" stroke="none"/></svg>

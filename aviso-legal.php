@@ -48,6 +48,7 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
 
   <!-- CABECERA -->
   <section class="legal-hero">
+    <div class="legal-hero-bg legal-hero-bg--aviso-legal" aria-hidden="true"></div>
     <div class="container-custom">
       <div class="legal-hero-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6 4 4"/><path d="m3 21 7-7"/><path d="m6 13 5 5"/><path d="M10.5 9.5 15 5l4 4-4.5 4.5Z"/></svg>
