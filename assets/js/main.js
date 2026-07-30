@@ -874,7 +874,7 @@
       submitBtn.setAttribute("disabled", "disabled");
       submitLabel.textContent = "Enviando…";
 
-      fetch("api/contacto.php", {
+      fetch("/api/contacto.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)

@@ -13,10 +13,10 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
 <link rel="canonical" href="<?php echo $canonical; ?>">
 <meta name="robots" content="noindex, follow">
 <?php include __DIR__ . '/includes/favicon.php'; ?>
-<link rel="preload" href="assets/fonts/sora-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/sora-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body class="legal-page">
 
@@ -161,7 +161,7 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
             <p>En ningún caso se cederán datos a terceros con fines comerciales propios sin el consentimiento expreso de la persona usuaria.</p>
             <div class="legal-note">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/></svg>
-              <p>Si en el futuro se incorpora alguna herramienta de analítica o marketing (por ejemplo, Google Analytics o Meta Pixel), el proveedor correspondiente se listará aquí y en la <a href="politica-cookies.php">Política de Cookies</a> antes de activarse.</p>
+              <p>Si en el futuro se incorpora alguna herramienta de analítica o marketing (por ejemplo, Google Analytics o Meta Pixel), el proveedor correspondiente se listará aquí y en la <a href="/politica-cookies.php">Política de Cookies</a> antes de activarse.</p>
             </div>
           </section>
 
@@ -239,12 +239,12 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
         <div class="legal-related">
           <p class="legal-toc-label">Documentos relacionados</p>
           <div class="legal-related-grid">
-            <a href="aviso-legal.php" class="privacy-legal-card">
+            <a href="/aviso-legal.php" class="privacy-legal-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6 4 4"/><path d="m3 21 7-7"/><path d="m6 13 5 5"/><path d="M10.5 9.5 15 5l4 4-4.5 4.5Z"/></svg>
               <span>Aviso Legal</span>
               <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="politica-cookies.php" class="privacy-legal-card">
+            <a href="/politica-cookies.php" class="privacy-legal-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
               <span>Política de Cookies</span>
               <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -263,6 +263,6 @@ $canonical = "https://infinaeconsulting.com/politica-privacidad.php";
 <?php include __DIR__ . '/includes/privacy-widget.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/main.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>

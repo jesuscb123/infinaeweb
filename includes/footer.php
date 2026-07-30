@@ -7,14 +7,14 @@
  */
 $infinaePage   = basename($_SERVER['PHP_SELF']);
 $infinaeIsHome = $infinaePage === 'index.php';
-$infinaeAnchor = $infinaeIsHome ? '' : 'index.php';
+$infinaeAnchor = $infinaeIsHome ? '' : '/index.php';
 ?>
 <footer class="site-footer">
   <div class="container-custom">
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img src="assets/img/icon-white.webp" alt="" width="51" height="24">
+          <img src="/assets/img/icon-white.webp" alt="" width="51" height="24">
           <span>INFINAE</span>
         </div>
         <p style="font-size:.88rem;max-width:32ch;">Call center especializado en llamadas salientes B2B, con sede en Jerez de la Frontera.</p>
@@ -48,9 +48,9 @@ $infinaeAnchor = $infinaeIsHome ? '' : 'index.php';
       <div class="footer-col">
         <h5>Legal</h5>
         <ul>
-          <li><a href="aviso-legal.php"<?php echo $infinaePage === 'aviso-legal.php' ? ' aria-current="page"' : ''; ?>>Aviso legal</a></li>
-          <li><a href="politica-privacidad.php"<?php echo $infinaePage === 'politica-privacidad.php' ? ' aria-current="page"' : ''; ?>>Política de privacidad</a></li>
-          <li><a href="politica-cookies.php"<?php echo $infinaePage === 'politica-cookies.php' ? ' aria-current="page"' : ''; ?>>Política de cookies</a></li>
+          <li><a href="/aviso-legal.php"<?php echo $infinaePage === 'aviso-legal.php' ? ' aria-current="page"' : ''; ?>>Aviso legal</a></li>
+          <li><a href="/politica-privacidad.php"<?php echo $infinaePage === 'politica-privacidad.php' ? ' aria-current="page"' : ''; ?>>Política de privacidad</a></li>
+          <li><a href="/politica-cookies.php"<?php echo $infinaePage === 'politica-cookies.php' ? ' aria-current="page"' : ''; ?>>Política de cookies</a></li>
         </ul>
       </div>
     </div>

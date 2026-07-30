@@ -10,7 +10,7 @@
     </div>
     <div class="cookie-banner-content">
       <p class="cookie-banner-title">Usamos cookies</p>
-      <p class="cookie-banner-text" id="cookieBannerDesc">Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar el uso del sitio y ofrecerte contenido personalizado. Consulta nuestra <a href="politica-cookies.php">política de cookies</a> y <a href="politica-privacidad.php">política de privacidad</a>.</p>
+      <p class="cookie-banner-text" id="cookieBannerDesc">Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar el uso del sitio y ofrecerte contenido personalizado. Consulta nuestra <a href="/politica-cookies.php">política de cookies</a> y <a href="/politica-privacidad.php">política de privacidad</a>.</p>
     </div>
     <div class="cookie-banner-actions" role="group" aria-label="Opciones de consentimiento de cookies">
       <button type="button" id="cookieReject" class="cookie-banner-btn cookie-banner-btn--ghost">Rechazar</button>
@@ -121,21 +121,21 @@
           <h3 class="privacy-modal-legal-title">Información legal</h3>
           <div class="row g-3">
             <div class="col-sm-4">
-              <a href="politica-privacidad.php" class="privacy-legal-card">
+              <a href="/politica-privacidad.php" class="privacy-legal-card">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7Z"/><path d="M14 3v4h4"/><path d="M9.5 12.5l1.8 1.8L15 10.5"/></svg>
                 <span>Política de Privacidad</span>
                 <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="politica-cookies.php" class="privacy-legal-card">
+              <a href="/politica-cookies.php" class="privacy-legal-card">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
                 <span>Política de Cookies</span>
                 <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
             <div class="col-sm-4">
-              <a href="aviso-legal.php" class="privacy-legal-card">
+              <a href="/aviso-legal.php" class="privacy-legal-card">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6 4 4"/><path d="m3 21 7-7"/><path d="m6 13 5 5"/><path d="M10.5 9.5 15 5l4 4-4.5 4.5Z"/></svg>
                 <span>Aviso Legal</span>
                 <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
