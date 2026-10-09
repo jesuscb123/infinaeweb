@@ -1,7 +1,7 @@
 <?php
 $pageTitle = "Aviso legal — Infinae";
 $pageDescription = "Aviso legal del sitio web de Infinae Consulting.";
-$canonical = "https://infinaeconsulting.com/aviso-legal.php";
+$canonical = "https://infinaeconsulting.com/aviso-legal";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,10 +13,10 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
 <link rel="canonical" href="<?php echo $canonical; ?>">
 <meta name="robots" content="noindex, follow">
 <?php include __DIR__ . '/includes/favicon.php'; ?>
-<link rel="preload" href="/assets/fonts/sora-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sora-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="legal-page">
 
@@ -111,7 +111,7 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
 
           <section class="legal-section" id="s5">
             <div class="legal-section-head"><span class="legal-num">05</span><h2>Protección de datos</h2></div>
-            <p>Cuando sea necesario que la persona usuaria facilite datos personales para cumplimentar el formulario de contacto de este sitio web, la recogida y tratamiento de dichos datos se realizará conforme a la normativa vigente. Puede consultar más información en la <a href="/politica-privacidad.php">Política de Privacidad</a>.</p>
+            <p>Cuando sea necesario que la persona usuaria facilite datos personales para cumplimentar el formulario de contacto de este sitio web, la recogida y tratamiento de dichos datos se realizará conforme a la normativa vigente. Puede consultar más información en la <a href="politica-privacidad">Política de Privacidad</a>.</p>
           </section>
 
           <section class="legal-section" id="s6">
@@ -142,12 +142,12 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
         <div class="legal-related">
           <p class="legal-toc-label">Documentos relacionados</p>
           <div class="legal-related-grid">
-            <a href="/politica-privacidad.php" class="privacy-legal-card">
+            <a href="politica-privacidad" class="privacy-legal-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
               <span>Política de Privacidad</span>
               <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="/politica-cookies.php" class="privacy-legal-card">
+            <a href="politica-cookies" class="privacy-legal-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
               <span>Política de Cookies</span>
               <svg class="privacy-legal-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -166,6 +166,6 @@ $canonical = "https://infinaeconsulting.com/aviso-legal.php";
 <?php include __DIR__ . '/includes/privacy-widget.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -46,6 +46,30 @@
     });
   }
 
+  /* ---------- Enlaces de ancla sin dejar el "#" visible en la URL ----------
+     El salto a la sección sigue funcionando (vía scrollIntoView + scroll-padding-top
+     en CSS), pero se evita el salto nativo del navegador y se limpia el hash de la
+     barra de direcciones con history.replaceState. El skip-link de accesibilidad
+     ("Saltar al contenido") se deja con su comportamiento nativo intacto. */
+  function stripUrlHash() {
+    if (history.replaceState) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link || link.closest(".skip-link")) return;
+    var id = link.getAttribute("href").slice(1);
+    var target = id && document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    stripUrlHash();
+  });
+  if (location.hash && document.getElementById(location.hash.slice(1))) {
+    window.setTimeout(stripUrlHash, 0);
+  }
+
   /* ---------- Revelado de secciones al hacer scroll ---------- */
   var revealTargets = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur");
   if ("IntersectionObserver" in window) {
@@ -381,27 +405,12 @@
   }
 
   /* ---------- Carga diferida de scripts de terceros (solo tras consentimiento) ---------- */
-  var _loaded = { ga: false, gtm: false, fb: false };
-
-  function loadGoogleAnalytics() {
-    if (_loaded.ga) return;
-    _loaded.ga = true;
-    var GA_ID = "G-XXXXXXXXXX"; /* Reemplazar por el ID real cuando se active Analytics */
-    var s = document.createElement("script");
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-    s.async = true;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag("js", new Date());
-    gtag("config", GA_ID, { anonymize_ip: true });
-  }
+  var _loaded = { gtm: false, fb: false };
 
   function loadGoogleTagManager() {
     if (_loaded.gtm) return;
     _loaded.gtm = true;
-    var GTM_ID = "GTM-XXXXXXX"; /* Reemplazar por el ID real cuando se active GTM */
+    var GTM_ID = "GTM-WNTQWR5V";
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
     var s = document.createElement("script");
@@ -429,7 +438,6 @@
 
   function applyConsent(prefs) {
     if (!prefs) return;
-    if (prefs.analytics) loadGoogleAnalytics();
     if (prefs.marketing) loadMetaPixel();
     if (prefs.analytics || prefs.marketing) loadGoogleTagManager();
   }
@@ -874,7 +882,7 @@
       submitBtn.setAttribute("disabled", "disabled");
       submitLabel.textContent = "Enviando…";
 
-      fetch("/api/contacto.php", {
+      fetch("api/contacto.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)

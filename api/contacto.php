@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/bootstrap.php';
 require __DIR__ . '/smtp.php';
+require __DIR__ . '/email-template.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -81,10 +82,7 @@ $toName    = getenv('CONTACT_TO_NAME') ?: 'Infinae';
 $asunto     = 'Nuevo mensaje de contacto — infinaeconsulting.com';
 $asuntoMime = '=?UTF-8?B?' . base64_encode($asunto) . '?=';
 
-$cuerpo = "Nombre: {$nombre}\n"
-        . 'Empresa: ' . ($empresa !== '' ? $empresa : '—') . "\n"
-        . "Email: {$email}\n\n"
-        . "Mensaje:\n{$mensaje}\n";
+$multipart = infinae_contact_multipart_body($nombre, $empresa, $email, $mensaje);
 
 $headers = [
     'From: ' . infinae_smtp_header_safe($fromName) . ' <' . $fromEmail . '>',
@@ -92,11 +90,11 @@ $headers = [
     'Reply-To: ' . infinae_smtp_header_safe($nombre) . ' <' . $email . '>',
     'Subject: ' . $asuntoMime,
     'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Type: multipart/alternative; boundary="' . $multipart['boundary'] . '"',
     'X-Mailer: Infinae-SMTP/1.0',
 ];
 
-$enviado = infinae_smtp_send($toEmail, $headers, $cuerpo);
+$enviado = infinae_smtp_send($toEmail, $headers, $multipart['body']);
 
 if ($enviado) {
     echo json_encode(['success' => true]);

@@ -1377,7 +1377,7 @@ body.legal-page .navbar-infinae {
 }
 .form-row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; }
 .form-row { margin: 0; }
-.form-row label {
+.form-row label:not(.form-checkbox) {
   display: block;
   font-size: .92rem;
   font-weight: 600;

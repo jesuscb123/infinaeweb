@@ -1,3 +1,14 @@
+RewriteEngine On
+
+# Redirige las URL con extensión .php a su versión amigable (evita contenido duplicado en buscadores)
+RewriteCond %{THE_REQUEST} \s/+(.+)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Sirve internamente el archivo .php correspondiente cuando se pide la URL sin extensión
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)$ $1.php [L]
+
 # Bloquea el acceso HTTP directo a archivos de configuración sensibles.
 # No afecta a la lectura interna que hace PHP (file()/require), solo al navegador.
 <FilesMatch "^\.env">

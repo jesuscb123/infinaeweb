@@ -19,12 +19,18 @@ function infinae_smtp_connect(string $host, int $port, string $secure, int $time
 {
     $transport = strtolower($secure) === 'ssl' ? 'ssl://' : 'tcp://';
 
-    return @stream_socket_client(
+    $socket = @stream_socket_client(
         $transport . $host . ':' . $port,
         $errno,
         $errstr,
         $timeout
     );
+
+    if ($socket === false) {
+        error_log("infinae_smtp: no se pudo conectar a {$host}:{$port} ({$transport}) — error {$errno}: {$errstr}. Puede que el hosting bloquee conexiones SMTP salientes a ese host/puerto.");
+    }
+
+    return $socket;
 }
 
 /**
@@ -52,14 +58,21 @@ function infinae_smtp_read($socket): string
 
 /**
  * Envía un comando SMTP (añadiendo el CRLF final) y comprueba que la
- * respuesta del servidor empiece por el código de éxito esperado.
+ * respuesta del servidor empiece por el código de éxito esperado. Si falla,
+ * registra la respuesta del servidor con un $context legible (nunca el
+ * comando en sí, para no dejar credenciales de AUTH en el log).
  *
  * @param resource $socket
  */
-function infinae_smtp_command($socket, string $command, string $expectedCode): bool
+function infinae_smtp_command($socket, string $command, string $expectedCode, string $context): bool
 {
     fwrite($socket, $command . "\r\n");
-    return strpos(infinae_smtp_read($socket), $expectedCode) === 0;
+    $response = infinae_smtp_read($socket);
+    $ok = strpos($response, $expectedCode) === 0;
+    if (!$ok) {
+        error_log("infinae_smtp: paso '{$context}' fallido (se esperaba código {$expectedCode}). Respuesta del servidor: " . trim($response));
+    }
+    return $ok;
 }
 
 /**
@@ -117,35 +130,50 @@ function infinae_smtp_send(string $to, array $headers, string $cuerpo): bool
 
     stream_set_timeout($socket, $timeout);
 
-    $ok = strpos(infinae_smtp_read($socket), '220') === 0;
+    $bannerResponse = infinae_smtp_read($socket);
+    $ok = strpos($bannerResponse, '220') === 0;
+    if (!$ok) {
+        error_log("infinae_smtp: paso 'banner inicial' fallido (se esperaba código 220). Respuesta del servidor: " . trim($bannerResponse));
+    }
+
     $ehloHost = gethostname() ?: ($_SERVER['SERVER_NAME'] ?? 'localhost');
-    $ok = $ok && infinae_smtp_command($socket, 'EHLO ' . $ehloHost, '250');
+    $ok = $ok && infinae_smtp_command($socket, 'EHLO ' . $ehloHost, '250', 'EHLO');
 
     if ($ok && strtolower($secure) === 'tls') {
-        $ok = infinae_smtp_command($socket, 'STARTTLS', '220');
-        $ok = $ok && @stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+        $ok = infinae_smtp_command($socket, 'STARTTLS', '220', 'STARTTLS');
+        if ($ok) {
+            $cryptoOk = @stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+            if (!$cryptoOk) {
+                error_log('infinae_smtp: fallo al negociar TLS (stream_socket_enable_crypto). Revisa que la extensión OpenSSL de PHP esté activa en el hosting.');
+            }
+            $ok = $cryptoOk;
+        }
         // El servidor "olvida" el EHLO anterior al cifrar la conexión; hay que repetirlo.
-        $ok = $ok && infinae_smtp_command($socket, 'EHLO ' . $ehloHost, '250');
+        $ok = $ok && infinae_smtp_command($socket, 'EHLO ' . $ehloHost, '250', 'EHLO tras STARTTLS');
     }
 
     if ($ok && $user !== '') {
-        $ok = infinae_smtp_command($socket, 'AUTH LOGIN', '334');
-        $ok = $ok && infinae_smtp_command($socket, base64_encode($user), '334');
-        $ok = $ok && infinae_smtp_command($socket, base64_encode($pass), '235');
+        $ok = infinae_smtp_command($socket, 'AUTH LOGIN', '334', 'AUTH LOGIN');
+        $ok = $ok && infinae_smtp_command($socket, base64_encode($user), '334', 'AUTH usuario');
+        $ok = $ok && infinae_smtp_command($socket, base64_encode($pass), '235', 'AUTH contraseña');
     }
 
-    $ok = $ok && infinae_smtp_command($socket, 'MAIL FROM:<' . $from . '>', '250');
-    $ok = $ok && infinae_smtp_command($socket, 'RCPT TO:<' . $to . '>', '250');
-    $ok = $ok && infinae_smtp_command($socket, 'DATA', '354');
+    $ok = $ok && infinae_smtp_command($socket, 'MAIL FROM:<' . $from . '>', '250', 'MAIL FROM');
+    $ok = $ok && infinae_smtp_command($socket, 'RCPT TO:<' . $to . '>', '250', 'RCPT TO');
+    $ok = $ok && infinae_smtp_command($socket, 'DATA', '354', 'DATA');
 
     if ($ok) {
         $mensaje = infinae_smtp_dot_stuff(implode("\r\n", $headers) . "\r\n\r\n" . $cuerpo);
         fwrite($socket, $mensaje . "\r\n.\r\n");
-        $ok = strpos(infinae_smtp_read($socket), '250') === 0;
+        $finalResponse = infinae_smtp_read($socket);
+        $ok = strpos($finalResponse, '250') === 0;
+        if (!$ok) {
+            error_log("infinae_smtp: paso 'envío del cuerpo (DATA)' fallido (se esperaba código 250). Respuesta del servidor: " . trim($finalResponse));
+        }
     }
 
     if (is_resource($socket)) {
-        @infinae_smtp_command($socket, 'QUIT', '221');
+        @infinae_smtp_command($socket, 'QUIT', '221', 'QUIT');
         fclose($socket);
     }
 

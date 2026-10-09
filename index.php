@@ -29,11 +29,11 @@ $canonical = "https://infinaeconsulting.com/";
 <?php include __DIR__ . '/includes/favicon.php'; ?>
 
 <!-- Fuentes propias precargadas -->
-<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css">
 
 <script type="application/ld+json">
 {
@@ -71,8 +71,8 @@ $canonical = "https://infinaeconsulting.com/";
   <!-- HERO -->
   <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/hero-poster.webp" aria-hidden="true">
-      <source src="/assets/video/hero-bg.mp4" type="video/mp4">
-      <source src="/assets/video/hero-bg.webm" type="video/webm">
+      <source src="assets/video/hero-bg.mp4" type="video/mp4">
+      <source src="assets/video/hero-bg.webm" type="video/webm">
     </video>
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="container-custom">
@@ -92,10 +92,10 @@ $canonical = "https://infinaeconsulting.com/";
       </div>
       <div class="hero-mark reveal">
         <div class="hero-mark-photo">
-          <img src="/assets/img/agente-atencion-hero.webp" alt="Agente de Infinae con auriculares atendiendo una llamada en el call center" width="1600" height="1600">
+          <img src="assets/img/agente-atencion-hero.webp" alt="Agente de Infinae con auriculares atendiendo una llamada en el call center" width="1600" height="1600">
           <span class="hero-mark-scrim" aria-hidden="true"></span>
           <div class="hero-mark-logo" aria-hidden="true">
-            <img src="/assets/img/icon-white.webp" alt="" class="hero-mark-logo-icon">
+            <img src="assets/img/icon-white.webp" alt="" class="hero-mark-logo-icon">
             <span class="hero-mark-logo-text">INFINAE</span>
           </div>
         </div>
@@ -159,7 +159,7 @@ $canonical = "https://infinaeconsulting.com/";
         <div class="col-lg-5 order-lg-1 reveal-left">
           <div class="about-media" data-tilt-group>
             <div class="about-media-tilt" data-tilt>
-              <img class="reveal-blur" src="/assets/img/team-wide.webp" alt="Equipo de Infinae en las oficinas de Jerez" loading="lazy" width="1408" height="1600">
+              <img class="reveal-blur" src="assets/img/team-wide.webp" alt="Equipo de Infinae en las oficinas de Jerez" loading="lazy" width="1408" height="1600">
             </div>
             <span class="about-media-chip" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 5 18.5V20"/><circle cx="9.5" cy="8" r="3.2"/><path d="M16.5 8.3a3 3 0 1 1 1.9 5.4"/><path d="M19 20v-1.5a3 3 0 0 0-1.7-2.7"/></svg>
@@ -230,7 +230,7 @@ $canonical = "https://infinaeconsulting.com/";
 
           <div class="story-act-media reveal-right">
             <div class="story-act-photo">
-              <img src="/assets/img/agent-portrait.webp" alt="Agente de Infinae en plena llamada" loading="lazy" width="1200" height="1504">
+              <img src="assets/img/agent-portrait.webp" alt="Agente de Infinae en plena llamada" loading="lazy" width="1200" height="1504">
               <div class="story-act-photo-overlay">
                 <span class="story-act-photo-eyebrow">Cada llamada</span>
                 <span class="story-act-photo-title">es una oportunidad</span>
@@ -246,7 +246,7 @@ $canonical = "https://infinaeconsulting.com/";
         <div class="story-act-grid">
           <div class="story-act-media reveal-left">
             <div class="story-act-photo">
-              <img src="/assets/img/headset.webp" alt="Agente de Infinae siguiendo el guion de llamada con diadema profesional" loading="lazy" width="1008" height="1200">
+              <img src="assets/img/headset.webp" alt="Agente de Infinae siguiendo el guion de llamada con diadema profesional" loading="lazy" width="1008" height="1200">
               <div class="story-act-photo-overlay">
                 <span class="story-act-photo-eyebrow">Cada equipo</span>
                 <span class="story-act-photo-title">sigue un método</span>
@@ -305,7 +305,7 @@ $canonical = "https://infinaeconsulting.com/";
       </div>
       <div class="quality-grid">
         <article class="quality-card reveal-scale stagger-1">
-          <img class="quality-card-img" src="/assets/img/supervision.webp" alt="Analizamos cada llamada" loading="lazy" width="1408" height="1008">
+          <img class="quality-card-img" src="assets/img/supervision.webp" alt="Analizamos cada llamada" loading="lazy" width="1408" height="1008">
           <span class="quality-card-scrim" aria-hidden="true"></span>
           <span class="quality-card-tag">
             <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg></span>
@@ -317,7 +317,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </article>
         <article class="quality-card reveal-scale stagger-3">
-          <img class="quality-card-img" src="/assets/img/team-wide.webp" alt="Acompañamos en tiempo real" loading="lazy" width="1408" height="1600">
+          <img class="quality-card-img" src="assets/img/team-wide.webp" alt="Acompañamos en tiempo real" loading="lazy" width="1408" height="1600">
           <span class="quality-card-scrim" aria-hidden="true"></span>
           <span class="quality-card-tag">
             <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
@@ -329,7 +329,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </article>
         <article class="quality-card reveal-scale stagger-5">
-          <img class="quality-card-img" src="/assets/img/training.webp" alt="Equipos que evolucionan" loading="lazy" width="1408" height="1008">
+          <img class="quality-card-img" src="assets/img/training.webp" alt="Equipos que evolucionan" loading="lazy" width="1408" height="1008">
           <span class="quality-card-scrim" aria-hidden="true"></span>
           <span class="quality-card-tag">
             <span class="quality-card-tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span>
@@ -361,22 +361,22 @@ $canonical = "https://infinaeconsulting.com/";
 
       <div class="installation-photos is-active" data-installation-category="zona-trabajo">
         <div class="installation-photo installation-photo--large reveal-scale stagger-1">
-          <img src="/assets/img/zonas-trabajo/21.webp" alt="Sala principal de operaciones con varias filas de puestos de trabajo" loading="lazy" width="1024" height="768">
+          <img src="assets/img/zonas-trabajo/21.webp" alt="Sala principal de operaciones con varias filas de puestos de trabajo" loading="lazy" width="1024" height="768">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">01</span>Sala principal de operaciones</span>
         </div>
         <div class="installation-photo reveal-scale stagger-2">
-          <img src="/assets/img/zonas-trabajo/9.webp" alt="Puestos de trabajo equipados con auriculares y monitores" loading="lazy" width="768" height="1024">
+          <img src="assets/img/zonas-trabajo/9.webp" alt="Puestos de trabajo equipados con auriculares y monitores" loading="lazy" width="768" height="1024">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">02</span>Puestos con auriculares y monitores</span>
         </div>
         <div class="installation-photo reveal-scale stagger-3">
-          <img src="/assets/img/zonas-trabajo/8.webp" alt="Fila de puestos de trabajo con monitores" loading="lazy" width="615" height="461">
+          <img src="assets/img/zonas-trabajo/8.webp" alt="Fila de puestos de trabajo con monitores" loading="lazy" width="615" height="461">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">03</span>Fila de puestos de trabajo</span>
         </div>
         <div class="installation-photo reveal-scale stagger-4">
-          <img src="/assets/img/zonas-trabajo/11.webp" alt="Puesto de trabajo individual con monitor, teclado y auriculares" loading="lazy" width="615" height="820">
+          <img src="assets/img/zonas-trabajo/11.webp" alt="Puesto de trabajo individual con monitor, teclado y auriculares" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">04</span>Puesto de trabajo individual</span>
         </div>
@@ -384,17 +384,17 @@ $canonical = "https://infinaeconsulting.com/";
 
       <div class="installation-photos installation-photos--equipos" data-installation-category="equipos">
         <div class="installation-photo installation-photo--large reveal-scale stagger-1">
-          <img src="/assets/img/equipos-informaticos/5.webp" alt="Sala equipada con ordenadores y monitores" loading="lazy" width="615" height="461">
+          <img src="assets/img/equipos-informaticos/5.webp" alt="Sala equipada con ordenadores y monitores" loading="lazy" width="615" height="461">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">01</span>Sala equipada con ordenadores y monitores</span>
         </div>
         <div class="installation-photo reveal-scale stagger-2">
-          <img src="/assets/img/equipos-informaticos/6.webp" alt="Equipos informáticos en cada puesto de trabajo" loading="lazy" width="615" height="820">
+          <img src="assets/img/equipos-informaticos/6.webp" alt="Equipos informáticos en cada puesto de trabajo" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">02</span>Equipos informáticos en cada puesto</span>
         </div>
         <div class="installation-photo reveal-scale stagger-3">
-          <img src="/assets/img/equipos-informaticos/10.webp" alt="Ordenador individual con monitor y teclado" loading="lazy" width="615" height="820">
+          <img src="assets/img/equipos-informaticos/10.webp" alt="Ordenador individual con monitor y teclado" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">03</span>Ordenador individual</span>
         </div>
@@ -402,27 +402,27 @@ $canonical = "https://infinaeconsulting.com/";
 
       <div class="installation-photos" data-installation-category="banos">
         <div class="installation-photo installation-photo--large reveal-scale stagger-1">
-          <img src="/assets/img/baños/17.webp" alt="Aseo con inodoro, urinarios y lavabos" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/17.webp" alt="Aseo con inodoro, urinarios y lavabos" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">01</span>Aseo con inodoro, urinarios y lavabos</span>
         </div>
         <div class="installation-photo reveal-scale stagger-2">
-          <img src="/assets/img/baños/16.webp" alt="Lavabo con módulo de almacenaje auxiliar" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/16.webp" alt="Lavabo con módulo de almacenaje auxiliar" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">02</span>Lavabo con módulo de almacenaje</span>
         </div>
         <div class="installation-photo reveal-scale stagger-3">
-          <img src="/assets/img/baños/18.webp" alt="Aseo individual con inodoro y lavabo" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/18.webp" alt="Aseo individual con inodoro y lavabo" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">03</span>Aseo individual</span>
         </div>
         <div class="installation-photo reveal-scale stagger-4">
-          <img src="/assets/img/baños/19.webp" alt="Módulo de almacenaje junto al inodoro" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/19.webp" alt="Módulo de almacenaje junto al inodoro" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">04</span>Módulo de almacenaje</span>
         </div>
         <div class="installation-photo reveal-scale stagger-5">
-          <img src="/assets/img/baños/20.webp" alt="Lavabo individual" loading="lazy" width="615" height="820">
+          <img src="assets/img/baños/20.webp" alt="Lavabo individual" loading="lazy" width="615" height="820">
           <span class="installation-photo-scrim" aria-hidden="true"></span>
           <span class="installation-photo-caption"><span class="installation-photo-num">05</span>Lavabo individual</span>
         </div>
@@ -436,7 +436,7 @@ $canonical = "https://infinaeconsulting.com/";
 
       <ul class="expand-cards reveal-scale" data-expand-cards>
         <li class="expand-card is-active" data-expand-card tabindex="0">
-          <img class="expand-card-img" src="/assets/img/equipamiento-ordenadores.webp" alt="Ordenadores de sobremesa equipados con CRM y software de gestión de llamadas" loading="lazy" width="2048" height="1536">
+          <img class="expand-card-img" src="assets/img/equipamiento-ordenadores.webp" alt="Ordenadores de sobremesa equipados con CRM y software de gestión de llamadas" loading="lazy" width="2048" height="1536">
           <span class="expand-card-scrim" aria-hidden="true"></span>
           <div class="expand-card-body">
             <span class="expand-card-label">Ordenadores</span>
@@ -448,7 +448,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </li>
         <li class="expand-card" data-expand-card tabindex="0">
-          <img class="expand-card-img" src="/assets/img/equipamiento-software.webp" alt="Software de gestión y herramientas ofimáticas para el análisis de datos" loading="lazy" width="2048" height="1536">
+          <img class="expand-card-img" src="assets/img/equipamiento-software.webp" alt="Software de gestión y herramientas ofimáticas para el análisis de datos" loading="lazy" width="2048" height="1536">
           <span class="expand-card-scrim" aria-hidden="true"></span>
           <div class="expand-card-body">
             <span class="expand-card-label">Software de gestión</span>
@@ -460,7 +460,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </li>
         <li class="expand-card" data-expand-card tabindex="0">
-          <img class="expand-card-img" src="/assets/img/equipamiento-auriculares.webp" alt="Auriculares con cancelación de ruido para una comunicación clara" loading="lazy" width="2048" height="1536">
+          <img class="expand-card-img" src="assets/img/equipamiento-auriculares.webp" alt="Auriculares con cancelación de ruido para una comunicación clara" loading="lazy" width="2048" height="1536">
           <span class="expand-card-scrim" aria-hidden="true"></span>
           <div class="expand-card-body">
             <span class="expand-card-label">Auriculares</span>
@@ -472,7 +472,7 @@ $canonical = "https://infinaeconsulting.com/";
           </div>
         </li>
         <li class="expand-card" data-expand-card tabindex="0">
-          <img class="expand-card-img" src="/assets/img/equipamiento-fibra.webp" alt="Conexión a internet por fibra óptica de alta velocidad" loading="lazy" width="2048" height="1536">
+          <img class="expand-card-img" src="assets/img/equipamiento-fibra.webp" alt="Conexión a internet por fibra óptica de alta velocidad" loading="lazy" width="2048" height="1536">
           <span class="expand-card-scrim" aria-hidden="true"></span>
           <div class="expand-card-body">
             <span class="expand-card-label">Fibra óptica</span>
@@ -530,9 +530,9 @@ $canonical = "https://infinaeconsulting.com/";
         </div>
 
         <div class="feature-visual reveal-right">
-          <img class="feature-visual-img is-active" data-feature-image data-feature-index="0" src="/assets/img/atencion-procesos.webp" alt="Agente de atención al cliente siguiendo un protocolo claro y estructurado" loading="lazy" width="2048" height="1536">
-          <img class="feature-visual-img" data-feature-image data-feature-index="1" src="/assets/img/atencion-enfoque.webp" alt="Agente de atención al cliente escuchando con atención personalizada" loading="lazy" width="2048" height="1536">
-          <img class="feature-visual-img" data-feature-image data-feature-index="2" src="/assets/img/atencion-resolucion.webp" alt="Agente de atención al cliente resolviendo una incidencia con rapidez" loading="lazy" width="2048" height="1536">
+          <img class="feature-visual-img is-active" data-feature-image data-feature-index="0" src="assets/img/atencion-procesos.webp" alt="Agente de atención al cliente siguiendo un protocolo claro y estructurado" loading="lazy" width="2048" height="1536">
+          <img class="feature-visual-img" data-feature-image data-feature-index="1" src="assets/img/atencion-enfoque.webp" alt="Agente de atención al cliente escuchando con atención personalizada" loading="lazy" width="2048" height="1536">
+          <img class="feature-visual-img" data-feature-image data-feature-index="2" src="assets/img/atencion-resolucion.webp" alt="Agente de atención al cliente resolviendo una incidencia con rapidez" loading="lazy" width="2048" height="1536">
           <span class="feature-visual-scrim" aria-hidden="true"></span>
         </div>
       </div>
@@ -625,7 +625,7 @@ $canonical = "https://infinaeconsulting.com/";
               <span class="form-checkbox-box" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
               </span>
-              <span class="form-checkbox-text">He leído y acepto la <a href="/politica-privacidad.php" target="_blank" rel="noopener">política de privacidad</a>.</span>
+              <span class="form-checkbox-text">He leído y acepto la <a href="politica-privacidad" target="_blank" rel="noopener">política de privacidad</a>.</span>
             </label>
             <p class="form-error">Debes aceptar la política de privacidad para continuar.</p>
           </div>
@@ -650,6 +650,6 @@ $canonical = "https://infinaeconsulting.com/";
 <?php include __DIR__ . '/includes/privacy-widget.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

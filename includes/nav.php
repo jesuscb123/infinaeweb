@@ -7,12 +7,12 @@
  */
 $infinaePage   = basename($_SERVER['PHP_SELF']);
 $infinaeIsHome = $infinaePage === 'index.php';
-$infinaeAnchor = $infinaeIsHome ? '' : '/index.php';
+$infinaeAnchor = $infinaeIsHome ? '' : '/';
 ?>
 <header class="navbar-infinae<?php echo $infinaeIsHome ? '' : ' is-scrolled'; ?>" id="siteNavbar">
   <div class="container-custom">
-    <a href="<?php echo $infinaeIsHome ? '#top' : '/index.php'; ?>" class="nav-brand">
-      <img src="/assets/img/icon-navy.webp" alt="" width="51" height="24">
+    <a href="<?php echo $infinaeIsHome ? '#top' : '/'; ?>" class="nav-brand">
+      <img src="assets/img/icon-navy.webp" alt="" width="51" height="24">
       INFINAE
     </a>
     <nav aria-label="Navegación principal">
